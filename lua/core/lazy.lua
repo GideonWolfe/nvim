@@ -199,9 +199,6 @@ lazy.setup({
         -- LSP integrated formatting
         {
             "monaqa/dial.nvim",
-            config = function()
-                require('dial')
-            end,
         },
 
         -- Insert symbols via telescope
