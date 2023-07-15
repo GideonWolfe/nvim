@@ -45,9 +45,14 @@ local mappings = {
     },
     g = {
         name = "git",
+        a = { "<cmd>silent Git add %<cr>", "Git add current file" },
         c = { "<cmd>Git commit<cr>", "Git Commit" },
-        p = { "<cmd>Git push<cr>", "Git Push" },
+        d = { "<cmd>Git diff<cr>", "Git Diff" },
         g = { "<cmd>LazyGitCurrentFile<cr>", "Git GUI" },
+        l = { "<cmd>Git log<cr>", "Git Log" },
+        m = { "<cmd>Git merge<cr>", "Git Merge" },
+        p = { "<cmd>Git push<cr>", "Git Push" },
+        s = { "<cmd>G<cr>", "Git Status" },
     },
     h = {
         name = "hop",
