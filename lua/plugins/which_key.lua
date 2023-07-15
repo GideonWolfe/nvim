@@ -39,9 +39,14 @@ local mappings = {
         w = { function() telescope_builtins.live_grep() end, "Find Word" },
         ws = { function() telescope_builtins.lsp_workspace_symbols() end, "Find Workspace Symbols" },
     },
-    g = {
+    c = {
         name = "comment",
-        cc = { function() comment.toggle.linewise.current() end, "Comment Line" },
+        l = { function() comment.toggle.linewise.current() end, "Comment Line" },
+    },
+    g = {
+        name = "git",
+        c = { "<cmd>Git commit<cr>", "Git Commit" },
+        p = { "<cmd>Git push<cr>", "Git Push" },
     },
     h = {
         name = "hop",
