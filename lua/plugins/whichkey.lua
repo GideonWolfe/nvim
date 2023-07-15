@@ -1,9 +1,11 @@
 local wk = require("which-key")
 
--- Import comment API because they don't provide standard mappings...
+-- Import comment API
 local comment = require('Comment.api')
 
+-- Import telescope API
 local telescope_builtins = require('telescope.builtin')
+local telescope_extensions = require('telescope').extensions
 
 local opts = {
     prefix = "<leader>"
@@ -13,30 +15,29 @@ local mappings = {
     f = {
         -- Anything that involves locating and navigating to it
         name = "find",
-        d = { "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", "Find Definitions" },
-        ds = { "<cmd>Telescope lsp_document_symbols<cr>", "Find Document Symbols" },
+        d = { function() telescope_builtins.lsp_definitions() end, "Find Definition" },
+        ds = { function() telescope_builtins.lsp_document_symbols() end, "Find Document Symbols" },
         e = { "<cmd>TroubleToggle<cr>", "Find Errors" },
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        gf = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Find Git Files" },
-        i = { "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", "Find Implementations" },
-        mf = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Find Media Files" },
-        mp = { "<cmd>lua require('telescope.builtin').man_pages()<cr>", "Find Man Pages" },
-        qf = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "Find Quickfix" },
-        r = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "Find References" },
-        -- s = { "<cmd>lua require('telescope.builtin').spell_suggest()<cr>", "Find Spelling Suggestions" },
+        f = { function() telescope_builtins.find_files() end, "Find Files" },
+        gf = { function() telescope_builtins.git_files() end, "Find Git Files" },
+        i = { function() telescope_builtins.lsp_implementations() end, "Find Implementations" },
+        mf = { function() telescope_extensions.media_files.media_files() end, "Find Media Files" },
+        mp = { function() telescope_builtins.man_pages() end, "Find Man Pages" },
+        qf = { function() telescope_builtins.quickfix() end, "Find Quickfix" },
+        r = { function() telescope_builtins.lsp_references() end, "Find References" },
         s = { function() telescope_builtins.spell_suggest() end, "Find Spelling Suggestions" },
         t = { "<cmd>TodoTelescope<cr>", "Find Todos" },
         -- How we have a label that nests deeper
         v = {
             name = "Vim",
             -- This keybind is <leader>fvh
-            h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Find Vim Help" },
-            c = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Find Vim Commands" },
+            h = { function() telescope_builtins.help_tags() end, "Find Vim Help" },
+            c = { function() telescope_builtins.commands() end, "Find Vim Commands" },
         },
         --vh = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Find Vim Help" },
         -- vc = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Find Vim Commands" },
-        w = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Word" },
-        ws = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find Workspace Symbols" },
+        w = { function() telescope_builtins.live_grep() end, "Find Word" },
+        ws = { function() telescope_builtins.lsp_workspace_symbols() end, "Find Workspace Symbols" },
     },
     g = {
         name = "comment",
