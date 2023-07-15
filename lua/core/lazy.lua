@@ -201,6 +201,13 @@ lazy.setup({
             "nvim-telescope/telescope-symbols.nvim",
         },
 
+        -- Improved clipboard manager
+        {
+            "AckslD/nvim-neoclip.lua",
+            config = function()
+                require('neoclip').setup()
+            end,
+        },
 
         ----------------
         -- Navigation --
