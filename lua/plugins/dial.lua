@@ -11,6 +11,6 @@ require("dial.config").augends:register_group {
         augend.constant.alias.bool,    -- boolean value (true <-> false)
         augend.constant.alias.alpha,   -- lowercase alphabet
         augend.constant.alias.Alpha,   -- uppercase alphabet
-        augend.semver.alias.semver,    -- semantic versions (0.3.0, 1.22.1, 3.9.1, ...)
+        augend.semver.alias.semver,    -- semantic versions (0.3.0, 1.31.101, 3.9.1, ...)
     },
 }
