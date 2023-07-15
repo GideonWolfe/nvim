@@ -53,6 +53,9 @@ local mappings = {
         name = "markdown",
         p = { "<plug>MarkdownPreviewToggle", "Markdown Preview" },
     },
+    nt = {
+        "<cmd>NvimTreeToggle<cr>", "File Tree"
+    },
     s = {
         name = "symbols",
         o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
