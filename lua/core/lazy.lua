@@ -166,7 +166,7 @@ lazy.setup({
         {
             "numToStr/Comment.nvim",
             config = function()
-                require('comment').setup()
+                require("Comment").setup()
             end
         },
 
@@ -436,7 +436,7 @@ lazy.setup({
         {
             "folke/which-key.nvim",
             config = function()
-                require("which_key").setup()
+                require("which-key").setup()
             end,
         },
 
