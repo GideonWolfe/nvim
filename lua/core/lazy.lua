@@ -466,7 +466,7 @@ lazy.setup({
                 "nvim-lua/plenary.nvim",
             },
         },
-        
+
         -- The classic, provides vim commands for git
         {
             "tpope/vim-fugitive",
