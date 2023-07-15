@@ -47,6 +47,7 @@ local mappings = {
         name = "git",
         c = { "<cmd>Git commit<cr>", "Git Commit" },
         p = { "<cmd>Git push<cr>", "Git Push" },
+        g = { "<cmd>LazyGitCurrentFile<cr>", "Git GUI" },
     },
     h = {
         name = "hop",

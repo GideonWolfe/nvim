@@ -165,6 +165,9 @@ lazy.setup({
         -- },
         {
             "numToStr/Comment.nvim",
+            config = function()
+                require('comment').setup()
+            end
         },
 
         -- auto pairs
@@ -376,29 +379,6 @@ lazy.setup({
         },
 
 
-        -- Git signs in the gutter
-        {
-            "lewis6991/gitsigns.nvim",
-            config = function()
-                require("gitsigns").setup()
-            end,
-            dependencies = { "nvim-lua/plenary.nvim" },
-            event = "BufRead",
-        },
-
-        -- Enhanced diff view
-        {
-            "sindrets/diffview.nvim",
-        },
-
-        -- Git UI
-        {
-            "kdheepak/lazygit.nvim",
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-            },
-        },
-
         -- Colorize color codes
         {
             "norcalli/nvim-colorizer.lua",
@@ -456,9 +436,42 @@ lazy.setup({
         {
             "folke/which-key.nvim",
             config = function()
-                require("whichkey")
+                require("which_key").setup()
             end,
         },
+
+        ---------
+        -- Git --
+        ---------
+
+        -- Git signs in the gutter
+        {
+            "lewis6991/gitsigns.nvim",
+            config = function()
+                require("gitsigns").setup()
+            end,
+            dependencies = { "nvim-lua/plenary.nvim" },
+            event = "BufRead",
+        },
+
+        -- Enhanced diff view
+        {
+            "sindrets/diffview.nvim",
+        },
+
+        -- Git UI
+        {
+            "kdheepak/lazygit.nvim",
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+            },
+        },
+        
+        -- The classic, provides vim commands for git
+        {
+            "tpope/vim-fugitive",
+        },
+
 
         ---------------
         -- Utilities --
