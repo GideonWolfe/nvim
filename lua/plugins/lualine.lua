@@ -154,5 +154,13 @@ require('lualine').setup {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = { 'lazy', 'nvim-tree' }
+    extensions = {
+        'lazy',
+        'nvim-tree',
+        'trouble',
+        'symbols-outline',
+        'nvim-dap-ui',
+        'fugitive',
+        'man',
+    }
 }
