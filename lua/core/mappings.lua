@@ -115,8 +115,6 @@ nmap('<c-l>', '<c-w>l')
 -- Symbol Window
 -- nnoremap('<leader>so', ':SymbolsOutline<CR>') -- Toggle symbol window
 
-
--- TODO why did these stop working?!!
 -- Dial mappings (smarrt increment/decrement)
 nmap("<C-a>", "<Plug>(dial-increment)")
 nmap("<C-x>", "<Plug>(dial-decrement)")
