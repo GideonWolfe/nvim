@@ -196,6 +196,12 @@ lazy.setup({
             "monaqa/dial.nvim",
         },
 
+        -- Insert symbols via telescope
+        {
+            "nvim-telescope/telescope-symbols.nvim",
+        },
+
+
         ----------------
         -- Navigation --
         ----------------
