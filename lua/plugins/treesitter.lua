@@ -35,6 +35,7 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "make",
     "markdown",
+    "markdown_inline",
     "matlab",
     "nix",
     "pascal",
