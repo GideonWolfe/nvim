@@ -44,6 +44,8 @@ opt.conceallevel = 0      -- don't automatically collapse markdown and latex
 opt.cursorline = true     -- enable different color for line number (or whole line) of current line
 opt.pumheight = 10        -- height of pop up menu
 opt.showtabline = 1       -- always show tabs (2) (1 if only when 2 or more tabs)
+-- TODO this setting is getting overwritten?
+opt.lazyredraw = false       -- TODO disabled to quite error from noice
 -- style we can assign to windows
 g.floating_window_border_dark = {
     { "╭", "FloatBorderDark" },

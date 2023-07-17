@@ -199,3 +199,25 @@ cmd [[highlight HopPreview ctermfg=magenta ctermbg=black cterm=bold]]
 
 -- Symbols outline highlights
 cmd [[highlight FocusedSymbol ctermfg=magenta ctermbg=black cterm=bold]]
+
+
+-- nvim notify highlight groups
+cmd [[highlight NotifyERRORBorder ctermfg=red ctermbg=black]]
+cmd [[highlight NotifyERRORIcon ctermfg=red ctermbg=black]]
+cmd [[highlight NotifyERRORTitle ctermfg=red ctermbg=black]]
+
+cmd [[highlight NotifyINFOBorder ctermfg=blue ctermbg=black]]
+cmd [[highlight NotifyINFOIcon ctermfg=green ctermbg=black]]
+cmd [[highlight NotifyINFOTitle ctermfg=blue ctermbg=black]]
+
+cmd [[highlight NotifyWARNBorder ctermfg=yellow ctermbg=black]]
+cmd [[highlight NotifyWARNIcon ctermfg=red ctermbg=black]]
+cmd [[highlight NotifyWARNTitle ctermfg=yellow ctermbg=black]]
+
+cmd [[highlight NotifyDEBUGBorder ctermfg=magenta ctermbg=black]]
+cmd [[highlight NotifyDEBUGIcon ctermfg=green ctermbg=black]]
+cmd [[highlight NotifyDEBUGTitle ctermfg=magenta ctermbg=black]]
+
+cmd [[highlight NotifyTRACEBorder ctermfg=cyan ctermbg=black]]
+cmd [[highlight NotifyTRACEIcon ctermfg=magenta ctermbg=black]]
+cmd [[highlight NotifyTRACETitle ctermfg=cyan ctermbg=black]]

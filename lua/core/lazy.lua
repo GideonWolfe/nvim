@@ -345,6 +345,26 @@ lazy.setup({
         -- Colorscheme
         { 'deviantfero/wpgtk.vim' },
 
+        -- Better notifications
+        {
+            'rcarriga/nvim-notify',
+            config = function()
+                require("notify").setup()
+            end,
+        },
+
+        -- UI overhaul
+        {
+            'folke/noice.nvim',
+            event = "VeryLazy",
+            dependencies = {
+                'MunifTanjim/nui.nvim', -- UI component lib, used by noice
+            },
+            config = function()
+                require("noice").setup()
+            end,
+        },
+
         -- Dashboard
         {
             "glepnir/dashboard-nvim",
@@ -390,6 +410,16 @@ lazy.setup({
             tag = 'legacy',
             config = function()
                 require("fidget").setup()
+            end,
+        },
+
+        -- TODO re-enable after NOICE is configured
+        -- Pretty function signatures as you type
+        {
+            "ray-x/lsp_signature.nvim",
+            enabled = false,
+            config = function()
+                require("lsp_signature").setup()
             end,
         },
 

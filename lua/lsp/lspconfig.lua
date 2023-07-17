@@ -7,6 +7,34 @@ vim.cmd('sign define DiagnosticSignWarn text= texthl=DiagnosticsWarn numhl=Di
 vim.cmd('sign define DiagnosticSignInfo text= texthl=DiagnosticInfo numhl=DiagnosticInfo')
 vim.cmd('sign define DiagnosticSignHint text= texthl=DiagnosticHint numhl=DiagnosticHint')
 
+
+-- Diagnostic configs
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '', -- Could be '●', '▎', 'x'
+    }
+})
+
+-- Border for floating windows provided by LSP
+local border = {
+    { "🭽", "FloatBorder" },
+    { "▔",  "FloatBorder" },
+    { "🭾", "FloatBorder" },
+    { "▕",  "FloatBorder" },
+    { "🭿", "FloatBorder" },
+    { "▁",  "FloatBorder" },
+    { "🭼", "FloatBorder" },
+    { "▏",  "FloatBorder" },
+}
+
+-- Override open floating window functions to include borders
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 
