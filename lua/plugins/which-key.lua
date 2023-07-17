@@ -65,6 +65,8 @@ local mappings = {
     l = {
         name = "lsp",
         ca = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "LSP Code Action" },
+        ic = { function() telescope_builtins.lsp_incoming_calls() end, "LSP Incoming Calls" },
+        oc = { function() telescope_builtins.lsp_outgoing_calls() end, "LSP Outgoing Calls" },
         rf = { function() telescope_builtins.lsp_references() end, "LSP References" },
         rn = { "<cmd>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
     },
