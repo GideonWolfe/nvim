@@ -61,6 +61,13 @@ local mappings = {
         c = { "<cmd>HopChar1<cr>", "Hop Character" },
         l = { "<cmd>HopLine<cr>", "Hop Line" },
     },
+    -- TODO is there a prettier way to do this UI wise? Telescope maybe?
+    l = {
+        name = "lsp",
+        ca = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "LSP Code Action" },
+        rf = { function() telescope_builtins.lsp_references() end, "LSP References" },
+        rn = { "<cmd>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
+    },
     m = {
         name = "markdown",
         p = { "<plug>MarkdownPreviewToggle", "Markdown Preview" },
