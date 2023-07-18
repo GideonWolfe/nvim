@@ -21,6 +21,7 @@ opt.undofile = true                           -- enable persistent undo
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
+vim.cmd 'colorscheme chameleon'          -- set colorscheme
 opt.list = false          -- Show line number
 opt.number = true         -- Show line number
 opt.numberwidth = 2       -- number column width
@@ -33,7 +34,7 @@ opt.splitright = true     -- Vertical split to the right
 opt.splitbelow = true     -- Horizontal split to the bottom
 opt.linebreak = true      -- Wrap on word boundary
 opt.wrap = true           -- Wrap lines
-opt.termguicolors = false -- Enable 24-bit RGB colors TODO this breaks colors
+opt.termguicolors = true -- Enable 24-bit RGB colors TODO this breaks colors
 opt.laststatus = 3        -- Set global statusline
 opt.cmdheight = 2         -- more space in the neovim command line for displaying messages
 opt.autoread = true       -- Automatically reread the file if a change was detected outside of vim

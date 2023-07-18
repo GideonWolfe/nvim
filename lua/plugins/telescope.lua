@@ -57,6 +57,8 @@ require('telescope').load_extension('media_files')
 require('telescope').load_extension('projects')
 -- Add the clipboard extension
 require('telescope').load_extension('neoclip')
+-- Add the snippet extension
+require('telescope').load_extension('luasnip')
 
 -- local map = require('utils.map')
 -- local nnoremap = map.nnoremap

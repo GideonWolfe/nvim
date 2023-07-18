@@ -5,7 +5,7 @@ require('core/lazy')
 require('core/options')
 
 -- Colors and Highlights
-require('core/colors')
+-- require('core/colors')
 
 -- Keymappings
 require('core/mappings')

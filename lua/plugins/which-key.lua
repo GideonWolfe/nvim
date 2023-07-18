@@ -41,8 +41,10 @@ local mappings = {
         ws = { function() telescope_builtins.lsp_workspace_symbols() end, "Find Workspace Symbols" },
     },
     c = {
-        name = "comment",
-        l = { function() comment.toggle.linewise.current() end, "Comment Line" },
+        name = "code",
+        c = { function() comment.toggle.linewise.current() end, "Comment" },
+        s = { function() telescope_extensions.luasnip.luasnip() end, "Snippets" },
+        e = { "<cmd>TroubleToggle<cr>", "Errors" },
     },
     g = {
         name = "git",
@@ -63,6 +65,7 @@ local mappings = {
         l = { "<cmd>HopLine<cr>", "Hop Line" },
     },
     -- TODO is there a prettier way to do this UI wise? Telescope maybe?
+    -- https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim
     l = {
         name = "lsp",
         ca = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "LSP Code Action" },

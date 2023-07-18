@@ -37,39 +37,39 @@ end
 -- Custom color options
 local custom_theme = require('lualine.themes.auto')
 
-custom_theme.normal.a.bg = 'black'
-custom_theme.normal.a.fg = 'blue'
-custom_theme.normal.b.bg = 'black'
-custom_theme.normal.b.fg = 'green'
-custom_theme.normal.c.bg = 'black'
-
-custom_theme.insert.a.bg = 'black'
-custom_theme.insert.a.fg = 'green'
-custom_theme.insert.b.bg = 'black'
-custom_theme.insert.b.fg = 'yellow'
-custom_theme.insert.c.bg = 'black'
-custom_theme.insert.c.fg = 'green'
-
-custom_theme.command.a.bg = 'black'
-custom_theme.command.a.fg = 'cyan'
-custom_theme.command.b.bg = 'black'
-custom_theme.command.b.fg = 'purple'
-custom_theme.command.c.bg = 'black'
-custom_theme.command.c.fg = 'magenta'
-
-custom_theme.replace.a.bg = 'black'
-custom_theme.replace.a.fg = 'cyan'
-custom_theme.replace.b.bg = 'black'
-custom_theme.replace.b.fg = 'purple'
-custom_theme.replace.c.bg = 'black'
-custom_theme.replace.c.fg = 'magenta'
-
-custom_theme.visual.a.bg = 'black'
-custom_theme.visual.a.fg = 'green'
-custom_theme.visual.b.bg = 'black'
-custom_theme.visual.b.fg = 'yellow'
-custom_theme.visual.c.bg = 'black'
-custom_theme.visual.c.fg = 'purple'
+-- custom_theme.normal.a.bg = 'black'
+-- custom_theme.normal.a.fg = 'blue'
+-- custom_theme.normal.b.bg = 'black'
+-- custom_theme.normal.b.fg = 'green'
+-- custom_theme.normal.c.bg = 'black'
+--
+-- custom_theme.insert.a.bg = 'black'
+-- custom_theme.insert.a.fg = 'green'
+-- custom_theme.insert.b.bg = 'black'
+-- custom_theme.insert.b.fg = 'yellow'
+-- custom_theme.insert.c.bg = 'black'
+-- custom_theme.insert.c.fg = 'green'
+--
+-- custom_theme.command.a.bg = 'black'
+-- custom_theme.command.a.fg = 'cyan'
+-- custom_theme.command.b.bg = 'black'
+-- custom_theme.command.b.fg = 'purple'
+-- custom_theme.command.c.bg = 'black'
+-- custom_theme.command.c.fg = 'magenta'
+--
+-- custom_theme.replace.a.bg = 'black'
+-- custom_theme.replace.a.fg = 'cyan'
+-- custom_theme.replace.b.bg = 'black'
+-- custom_theme.replace.b.fg = 'purple'
+-- custom_theme.replace.c.bg = 'black'
+-- custom_theme.replace.c.fg = 'magenta'
+--
+-- custom_theme.visual.a.bg = 'black'
+-- custom_theme.visual.a.fg = 'green'
+-- custom_theme.visual.b.bg = 'black'
+-- custom_theme.visual.b.fg = 'yellow'
+-- custom_theme.visual.c.bg = 'black'
+-- custom_theme.visual.c.fg = 'purple'
 
 
 -- TODO seems to always consider window inactive??
@@ -84,7 +84,7 @@ custom_theme.visual.c.fg = 'purple'
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = custom_theme,
+        --theme = custom_theme,
         component_separators = { left = '', right = '' },
         -- component_separators = { left = '', right = ''},
         section_separators = { left = '', right = '' },
@@ -139,7 +139,17 @@ require('lualine').setup {
             }
         },
         lualine_c = { 'buffers' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = {
+            'encoding',
+            'fileformat',
+            'filetype',
+            -- Custom section to show recording macro messages in status
+            {
+                require("noice").api.status.mode.get,
+                cond = require("noice").api.status.mode.has,
+                color = { fg = "cyan" }
+            }
+        },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },

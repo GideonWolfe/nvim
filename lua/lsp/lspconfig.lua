@@ -16,24 +16,24 @@ vim.diagnostic.config({
 })
 
 -- Border for floating windows provided by LSP
-local border = {
-    { "🭽", "FloatBorder" },
-    { "▔",  "FloatBorder" },
-    { "🭾", "FloatBorder" },
-    { "▕",  "FloatBorder" },
-    { "🭿", "FloatBorder" },
-    { "▁",  "FloatBorder" },
-    { "🭼", "FloatBorder" },
-    { "▏",  "FloatBorder" },
-}
+-- local border = {
+--     { "🭽", "FloatBorder" },
+--     { "▔",  "FloatBorder" },
+--     { "🭾", "FloatBorder" },
+--     { "▕",  "FloatBorder" },
+--     { "🭿", "FloatBorder" },
+--     { "▁",  "FloatBorder" },
+--     { "🭼", "FloatBorder" },
+--     { "▏",  "FloatBorder" },
+-- }
 
 -- Override open floating window functions to include borders
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-    opts = opts or {}
-    opts.border = opts.border or border
-    return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
+-- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+-- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+--     opts = opts or {}
+--     opts.border = opts.border or border
+--     return orig_util_open_floating_preview(contents, syntax, opts, ...)
+-- end
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
@@ -155,7 +155,7 @@ lspconfig.yamlls.setup { on_attach = require("lsp-format").on_attach }
 
 -- Lua
 lspconfig.lua_ls.setup({
-    on_attach = require("lsp-format").on_attach, -- specifying to use the formatter
+    --on_attach = require("lsp-format").on_attach, -- specifying to use the formatter
     settings = {
         Lua = {
             diagnostics = {

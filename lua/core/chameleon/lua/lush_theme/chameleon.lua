@@ -89,7 +89,7 @@ local theme = lush(function(injected_functions)
         --
         -- ColorColumn    { }, -- Columns set with 'colorcolumn'
         -- Conceal        { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-        -- Cursor         {fg=red }, -- Character under the cursor
+        Cursor         {gui='reverse' }, -- Character under the cursor
         -- CurSearch      { }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
         -- lCursor        { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
@@ -98,7 +98,7 @@ local theme = lush(function(injected_functions)
         Directory { fg = wal_colors.primary.foreground }, -- Directory names (and other special names in listings)
         -- DiffAdd        { }, -- Diff mode: Added line |diff.txt|
         -- DiffChange     { }, -- Diff mode: Changed line |diff.txt|
-        -- DiffDelete     { }, -- Diff mode: Deleted line |diff.txt|
+        DiffDelete     { bg=background, fg=red }, -- Diff mode: Deleted line |diff.txt|
         -- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
         -- EndOfBuffer    { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         -- TermCursor     { }, -- Cursor in a focused terminal
@@ -106,7 +106,7 @@ local theme = lush(function(injected_functions)
         ErrorMsg       { fg=red }, -- Error messages on the command line
         VertSplit      { bg=black}, -- Column separating vertically split windows
         -- Folded         { }, -- Line used for closed folds
-        -- FoldColumn     { }, -- 'foldcolumn'
+        FoldColumn     { bg = background }, -- 'foldcolumn'
         SignColumn     { ctermbg=black}, -- Column where |signs| are displayed
         -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Substitute     { gui='reverse'}, -- |:substitute| replacement text highlighting
@@ -116,6 +116,7 @@ local theme = lush(function(injected_functions)
         CursorLineNr   { fg=green, gui='bold' }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
         CursorLineSign { bg=black}, -- Like SignColumn when 'cursorline' is set for the cursor line
+        -- TODO this is broken
         MatchParen     { gui='reverse', bg=TermCursor.bg }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg        { fg=white, gui='bold' }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea        { }, -- Area for messages and cmdline
@@ -273,7 +274,7 @@ local theme = lush(function(injected_functions)
         -- sym"@text.title"        { }, -- Title
         -- sym"@text.uri"          { }, -- Underlined
         -- sym"@text.underline"    { }, -- Underlined
-        sym"@text.todo" { fg = red, gui = 'bold' },                          -- Todo
+        -- sym"@text.todo" { fg = red, gui = 'bold' },                          -- Todo
         --sym"@comment" { fg = Normal.fg.desaturate(20).lighten(25) },         -- Comment
         -- sym"@punctuation"       { }, -- Delimiter
         -- sym"@constant"          { }, -- Constant
@@ -336,9 +337,15 @@ local theme = lush(function(injected_functions)
         -- Indent Lines
         IndentBlanklineContextStart               {guisp='None'}, -- Indent blankline line
 
+        -- Devicons
+        -- TODO doesn't work
+        DevIconDefault               {fg = white,},
+
+
         -- Noice
         NoiceSplit               {fg=blue, bg=black}, -- Split uised by Noice
         NoiceSplitBorder               {fg=blue, bg=black}, -- Split uised by Noice
+        NoiceCursor               {gui='reverse'}, -- Split uised by Noice
 
         -- Telescope
         TelescopeSelection               {fg=green, bg=black, gui='bold'}, -- Currently selected item in telescope
@@ -426,6 +433,14 @@ local theme = lush(function(injected_functions)
         lualine_b_diff_removed_visual               {fg=GitSignsDelete.fg},
         lualine_b_diff_removed_normal               {fg=GitSignsDelete.fg},
         lualine_b_diff_removed_insert               {fg=GitSignsDelete.fg},
+        -- Colors of devicons for different modes
+        -- TODO not sure if these work either
+        lualine_x_filetype_DefaultDevIcon_terminal               {fg=white},
+        lualine_x_filetype_DefaultDevIcon_inactive               {fg=white},
+        lualine_x_filetype_DefaultDevIcon_replace               {fg=white},
+        lualine_x_filetype_DefaultDevIcon_command               {fg=white},
+        lualine_x_filetype_DefaultDevIcon_visual               {fg=white},
+        lualine_x_filetype_DefaultDevIcon_insert               {fg=white},
 
     }
 end)

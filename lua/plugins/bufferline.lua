@@ -1,6 +1,7 @@
 local bufferline = require('bufferline')
 bufferline.setup{
     options = {
+        themeable = true,
         mode = 'tabs',
         -- TODO lsp diagnostics don't show up in tabs
         diagnostics = "nvim_lsp",

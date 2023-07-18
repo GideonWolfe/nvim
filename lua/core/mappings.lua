@@ -70,6 +70,7 @@ nmap('<c-j>', '<c-w>j')
 nmap('<c-k>', '<c-w>k')
 nmap('<c-l>', '<c-w>l')
 
+nmap("K", 'lua vim.lsp.buf.hover()')
 
 -- Open NvimTree
 -- nnoremap("<leader>nt", ":NvimTreeToggle<CR>")

@@ -29,6 +29,13 @@ cmd [[au VimEnter * highlight PmenuSbar ctermfg=blue ctermbg=white]]
 -- Indent line highlights
 cmd [[au VimEnter * highlight IndentBlanklineContextStart guisp=None]]
 
+
+-- Noice UI framework highlight groups
+-- TODO afaik these don't do anything currenlty
+cmd [[au VimEnter * highlight NoiceSplit ctermfg=blue ctermbg=black]]
+cmd [[au VimEnter * highlight NoiceSplitBorder ctermfg=blue ctermbg=black]]
+
+
 -- Colors for diagnostics and errors
 cmd [[au VimEnter * highlight DiagnosticsError ctermfg=red]]
 cmd [[au VimEnter * highlight DiagnosticsWarn ctermfg=yellow]]
@@ -137,8 +144,9 @@ cmd [[au VimEnter * highlight Todo ctermbg=black ctermfg=yellow cterm=bold]]
 --TODO: hides cursor on whitespace?
 -- cmd [[colorscheme wal]]
 --TODO: these highlight all punctuation with treesitter?
-cmd [[colorscheme wpgtk]]
+-- cmd [[colorscheme wpgtk]]
 -- cmd [[colorscheme wpgtkAlt]]
+cmd [[colorscheme chameleon]]
 --
 -- -- Set number gutter to transparent
 -- Workaround to use autocommand since it isnt respected otherwise

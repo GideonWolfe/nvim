@@ -1,0 +1,1 @@
+/home/gideon/.cache/wal/wal_colors.lua
