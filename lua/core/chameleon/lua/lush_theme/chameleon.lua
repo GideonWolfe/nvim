@@ -96,28 +96,28 @@ local theme = lush(function(injected_functions)
         -- CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorLine     { }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory { fg = wal_colors.primary.foreground }, -- Directory names (and other special names in listings)
-        -- DiffAdd        { }, -- Diff mode: Added line |diff.txt|
-        -- DiffChange     { }, -- Diff mode: Changed line |diff.txt|
+        DiffAdd        { bg = hsl(background).mix(hsl(green), 20)}, -- Diff mode: Added line |diff.txt|
+        DiffChange     { bg = hsl(background).mix(hsl(yellow), 20) }, -- Diff mode: Changed line |diff.txt|
         DiffDelete     { bg=background, fg=red }, -- Diff mode: Deleted line |diff.txt|
-        -- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
+        DiffText       { bg = hsl(background).mix(hsl(blue), 30)}, -- Diff mode: Changed text within a changed line |diff.txt|
         -- EndOfBuffer    { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         -- TermCursor     { }, -- Cursor in a focused terminal
         -- TermCursorNC   { }, -- Cursor in an unfocused terminal
         ErrorMsg       { fg=red }, -- Error messages on the command line
-        VertSplit      { bg=black}, -- Column separating vertically split windows
-        -- Folded         { }, -- Line used for closed folds
-        FoldColumn     { bg = background }, -- 'foldcolumn'
-        SignColumn     { ctermbg=black}, -- Column where |signs| are displayed
+        VertSplit      { bg=background}, -- Column separating vertically split windows
+        Folded         { bg = hsl(background).mix(hsl(foreground), 30), fg = foreground, gui='bold'}, -- Line used for closed folds
+        FoldColumn     { bg = background }, -- 'foldcolumn' 
+        SignColumn     { ctermbg=background}, -- Column where |signs| are displayed
         -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Substitute     { gui='reverse'}, -- |:substitute| replacement text highlighting
-        LineNr         { fg=Normal.fg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        LineNr         { fg=foreground }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         LineNrAbove    { fg=Normal.fg}, -- Line number for when the 'relativenumber' option is set, above the cursor line
         LineNrBelow    { fg=Normal.fg}, -- Line number for when the 'relativenumber' option is set, below the cursor line
         CursorLineNr   { fg=green, gui='bold' }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-        -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
-        CursorLineSign { bg=black}, -- Like SignColumn when 'cursorline' is set for the cursor line
+        CursorLineFold { fg=blue, gui='bold'}, -- Like FoldColumn when 'cursorline' is set for the cursor line (color of + fold icon in column WHEN cursor is on fold line)
+        CursorLineSign { bg=background}, -- Like SignColumn when 'cursorline' is set for the cursor line
         -- TODO this is broken
-        MatchParen     { gui='reverse', bg=TermCursor.bg }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        -- MatchParen     { gui='reverse', bg=TermCursor.bg }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg        { fg=white, gui='bold' }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea        { }, -- Area for messages and cmdline
         -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -128,8 +128,8 @@ local theme = lush(function(injected_functions)
         FloatBorder    { fg=blue }, -- Border of floating windows.
         FloatTitle     { fg=green, gui='bold' }, -- Title of floating windows.
         NormalNC       { fg=Normal.fg}, -- normal text in non-current windows
-        Pmenu          { ctermfg=white, ctermbg=black }, -- Popup menu: Normal item.
-        PmenuSel       { fg=green, ctermbg=black}, -- Popup menu: Selected item.
+        Pmenu          { ctermfg=white, ctermbg=background }, -- Popup menu: Normal item.
+        PmenuSel       { fg=green, ctermbg=background}, -- Popup menu: Selected item.
         PmenuKind      { fg = blue}, -- Popup menu: Normal item "kind"
         PmenuKindSel   { fg = cyan}, -- Popup menu: Selected item "kind"
         -- TODO these two need to work better
@@ -146,7 +146,7 @@ local theme = lush(function(injected_functions)
         SpellLocal     { fg=magenta, gui='undercurl'}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellRare      { fg=cyan, gui='undercurl'}, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
         StatusLine     { fg = red, bg=background}, -- Status line of current window
-        StatusLineNC   { ctermfg = black, ctermbg=black, bg=black}, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+        StatusLineNC   { ctermfg = background, ctermbg=background, bg=background}, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
         -- TabLine        { }, -- Tab pages line, not active tab page label
         -- TabLineFill    { }, -- Tab pages line, where there are no labels
         -- TabLineSel     { }, -- Tab pages line, active tab page label
@@ -154,7 +154,7 @@ local theme = lush(function(injected_functions)
         Visual         {gui='reverse' }, -- Visual mode selection
         VisualNOS      {gui='reverse' }, -- Visual mode selection when vim is "Not Owning the Selection".
         WarningMsg     { fg=red }, -- Warning messages
-        Whitespace     { bg = black}, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+        Whitespace     { bg = background}, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         Winseparator   { fg = green }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
         WildMenu       { fg=green, gui='bold' }, -- Current match in 'wildmenu' completion
         WinBar         { fg=green, gui='bold'}, -- Window bar of current window
@@ -330,26 +330,31 @@ local theme = lush(function(injected_functions)
         TSRainbowCyan               {fg=cyan,},
 
         -- Git Signs
-        GitSignsAdd               {fg=green, bg=black }, -- Git sign for added code
-        GitSignsChange               {fg=yellow, bg=black }, -- Git sign for changed code
-        GitSignsDelete               {fg=red, bg=black }, -- Git sign for deleted code
+        GitSignsAdd               {fg=green, bg=background }, -- Git sign for added code
+        GitSignsChange               {fg=yellow, bg=background }, -- Git sign for changed code
+        GitSignsDelete               {fg=red, bg=background }, -- Git sign for deleted code
+
+        -- Diff View
+        -- TODO stil see cursorline
+        -- https://github.com/neovim/neovim/issues/9800
+        -- DiffviewCursorLine               {fg=background, bg=background }, -- Git sign for deleted code
 
         -- Indent Lines
         IndentBlanklineContextStart               {guisp='None'}, -- Indent blankline line
 
         -- Devicons
         -- TODO doesn't work
-        DevIconDefault               {fg = white,},
+        DevIconDefault               {fg = foreground,},
 
 
         -- Noice
-        NoiceSplit               {fg=blue, bg=black}, -- Split uised by Noice
-        NoiceSplitBorder               {fg=blue, bg=black}, -- Split uised by Noice
-        NoiceCursor               {gui='reverse'}, -- Split uised by Noice
+        NoiceSplit               {fg=blue, bg=background}, -- Split used by Noice
+        NoiceSplitBorder               {fg=blue, bg=background}, -- Split border used by Noice
+        NoiceCursor               {gui='reverse'}, -- Cursor used by Noice
 
         -- Telescope
-        TelescopeSelection               {fg=green, bg=black, gui='bold'}, -- Currently selected item in telescope
-        TelescopeSelectionCaret               {fg=magenta, bg=black, gui='bold'}, -- Currently selected item in telescope
+        TelescopeSelection               {fg=green, bg=background, gui='bold'}, -- Currently selected item in telescope
+        TelescopeSelectionCaret               {fg=magenta, bg=background, gui='bold'}, -- Currently selected item in telescope
         TelescopeMultiSelection               {gui='reverse'}, -- Currently selected item in telescope
         TelescopeBorder               {fg=FloatBorder.fg}, -- Border for floating window
         TelescopePromptBorder               {fg=cyan, gui='bold'}, -- Border for floating window
@@ -362,8 +367,10 @@ local theme = lush(function(injected_functions)
         TroubleCount               {fg=red, gui='bold'}, -- Count of errors in trouble
 
         -- Fidget
+        -- TODO the background color isn't working
+        -- Maybe just let Noice handle LSP progress
         FidgetTitle               {Title}, -- Title of fidget messages
-        FidgetTask               {fg=cyan}, -- Body of fidget messages
+        FidgetTask               {fg=cyan, bg=background}, -- Body of fidget messages
 
 
         --Dashboard
@@ -385,6 +392,7 @@ local theme = lush(function(injected_functions)
         FocusedSymbol              {fg=magenta, gui='bold'},
 
         -- Nvim Notify
+        NotifyBackground              {bg=background,},
         NotifyERRORBorder              {fg=DiagnosticError.fg,},
         NotifyERRORIcon              {fg=DiagnosticWarn.fg,},
         NotifyERRORTitle              {fg=DiagnosticError.fg, gui='bold'},
@@ -442,6 +450,12 @@ local theme = lush(function(injected_functions)
         lualine_x_filetype_DefaultDevIcon_visual               {fg=white},
         lualine_x_filetype_DefaultDevIcon_insert               {fg=white},
 
+
+        -- Bufferline
+        -- white x button but red for selscted tab
+        BufferLineCloseButton               {fg=white},
+        BufferLineCloseButtonSelected               {fg=red},
+        BufferLineTabSeparator               {fg=blue},
     }
 end)
 
