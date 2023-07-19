@@ -274,6 +274,12 @@ lazy.setup({
 			enabled = true
 		},
 
+        -- Enables an advanced file browser within telescope 
+        -- more than just the fuzzy search the file finder gives
+        {
+            "nvim-telescope/telescope-file-browser.nvim",
+        },
+
 
 		-- Hop to various locations in buffer
 		{
@@ -502,6 +508,9 @@ lazy.setup({
 		-- Enhanced diff view
 		{
 			"sindrets/diffview.nvim",
+			config = function()
+				require("diffview").setup()
+			end,
 		},
 
 		-- Git UI
@@ -529,5 +538,11 @@ lazy.setup({
 		},
 
 	},
+    -- TODO this doesn't do anything but I think it's a floating win problem
+    {
+        ui = {
+            border = "rounded"
+        }
+    }
 })
 -- some comment
