@@ -7,8 +7,24 @@ local comment = require('Comment.api')
 local telescope_builtins = require('telescope.builtin')
 local telescope_extensions = require('telescope').extensions
 
+-- Import icons
+local icons = require('core.icons')
+
+-- Options for plugin
+require("which-key").setup({
+    window = {
+        border = "double"
+    },
+    icons = {
+        breadcrumb = icons.ui.ChevronRight,
+        group = icons.misc.Tag,
+        -- separator = "$"
+    }
+})
+
+-- options for keymaps
 local opts = {
-    prefix = "<leader>"
+    prefix = "<leader>",
 }
 
 local mappings = {

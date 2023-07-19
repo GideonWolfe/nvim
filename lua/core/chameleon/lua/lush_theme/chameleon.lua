@@ -126,6 +126,7 @@ local theme = lush(function(injected_functions)
         Normal { fg = white },                           -- Normal text
         NormalFloat { fg = Normal.fg, bg = background }, -- Normal text in floating windows.
         FloatBorder    { fg=blue }, -- Border of floating windows.
+        FloatBorderDark    { fg=yellow }, -- Border of floating windows.
         FloatTitle     { fg=green, gui='bold' }, -- Title of floating windows.
         NormalNC       { fg=Normal.fg}, -- normal text in non-current windows
         Pmenu          { ctermfg=foreground, ctermbg=background }, -- Popup menu: Normal item.
@@ -424,6 +425,10 @@ local theme = lush(function(injected_functions)
         NotifyTRACEBorder              {fg=DiagnosticHint.fg,},
         NotifyTRACEIcon              {fg=DiagnosticInfo.fg,},
         NotifyTRACETitle              {fg=DiagnosticWarn.fg, gui='bold'},
+
+        -- Which key
+        WhichKeySeparator              {fg=green, gui='bold'}, -- character between map and action/category
+        WhichKeySeperator              {fg=red, gui='bold'}, -- character between map and action/category
 
         -- LuaLine
         -- colors of diagnostic warning for different modes

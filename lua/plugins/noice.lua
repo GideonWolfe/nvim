@@ -31,6 +31,7 @@ require("noice").setup({
         },
         -- TODO: this doesn't seem to work?
         -- Hover text when lsp.buf.hover is called (leader lci)
+        -- TODO: add this: https://github.com/folke/noice.nvim#lsp-hover-doc-scrolling
         hover = {
             -- TODO: disabled until I figure out why hover keeps showing up
             enabled = false,
