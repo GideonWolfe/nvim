@@ -31,7 +31,7 @@ cmd [[au VimEnter * highlight IndentBlanklineContextStart guisp=None]]
 
 
 -- Noice UI framework highlight groups
--- TODO afaik these don't do anything currenlty
+-- TODO: afaik these don't do anything currenlty
 cmd [[au VimEnter * highlight NoiceSplit ctermfg=blue ctermbg=black]]
 cmd [[au VimEnter * highlight NoiceSplitBorder ctermfg=blue ctermbg=black]]
 
@@ -70,7 +70,7 @@ cmd [[au VimEnter * highlight DiagnosticSignInfo ctermfg=green]]
 cmd [[au VimEnter * highlight DiagnosticSignHint ctermfg=blue]]
 
 -- Lualine warning color override, not specific to any lualine theme
---  TODO These can probably be deleted as we set them in the lualine config now
+--  TODO: These can probably be deleted as we set them in the lualine config now
 --  diganostic warnings
 -- cmd [[au VimEnter * highlight lualine_b_diagnostics_warn_terminal ctermfg=yellow]]
 -- cmd [[au VimEnter * highlight lualine_b_diagnostics_warn_inactive ctermfg=yellow]]
@@ -151,81 +151,81 @@ cmd [[colorscheme chameleon]]
 -- -- Set number gutter to transparent
 -- Workaround to use autocommand since it isnt respected otherwise
 -- https://www.reddit.com/r/neovim/comments/me35u9/lua_config_to_set_highlight/
-cmd [[au VimEnter * highlight LineNr ctermfg=white ctermbg=black]]
-cmd [[au VimEnter * highlight SignColumn ctermbg=black]]
+-- cmd [[au VimEnter * highlight LineNr ctermfg=white ctermbg=black]]
+-- cmd [[au VimEnter * highlight SignColumn ctermbg=black]]
 -- set pmenu to transparent
-cmd [[au VimEnter * highlight Pmenu ctermfg=white ctermbg=black]]
-cmd [[au VimEnter * highlight PmenuSel ctermfg=green ctermbg=black]]
+-- cmd [[au VimEnter * highlight Pmenu ctermfg=white ctermbg=black]]
+-- cmd [[au VimEnter * highlight PmenuSel ctermfg=green ctermbg=black]]
 
 
 -- Telescope highlight groups
-cmd [[highlight TelescopeSelection ctermfg=green ctermbg=black cterm=bold]]    -- best match
-cmd [[highlight TelescopeSelectionCaret ctermfg=red ctermbg=black cterm=bold]] -- caret/target symbol
-cmd [[highlight TelescopeMultiSelection ctermfg=green ctermbg=red]]
+-- cmd [[highlight TelescopeSelection ctermfg=green ctermbg=black cterm=bold]]    -- best match
+-- cmd [[highlight TelescopeSelectionCaret ctermfg=red ctermbg=black cterm=bold]] -- caret/target symbol
+-- cmd [[highlight TelescopeMultiSelection ctermfg=green ctermbg=red]]
 -- cmd[[highlight TelescopeNormal ctermfg=green ctermbg=black]] -- default text color
-cmd [[highlight TelescopeBorder ctermfg=yellow ctermbg=black]]
-cmd [[highlight TelescopePromptBorder ctermfg=cyan ctermbg=black cterm=bold]]
-cmd [[highlight TelescopeResultsBorder ctermfg=red ctermbg=black]]
-cmd [[highlight TelescopePreviewBorder ctermfg=yellow ctermbg=black]]
-cmd [[highlight TelescopeMatching ctermfg=cyan ctermbg=black]] -- colors matching input
-cmd [[highlight TelescopePromptPrefix ctermfg=red ctermbg=black]]
+-- cmd [[highlight TelescopeBorder ctermfg=yellow ctermbg=black]]
+-- cmd [[highlight TelescopePromptBorder ctermfg=cyan ctermbg=black cterm=bold]]
+-- cmd [[highlight TelescopeResultsBorder ctermfg=red ctermbg=black]]
+-- cmd [[highlight TelescopePreviewBorder ctermfg=yellow ctermbg=black]]
+-- cmd [[highlight TelescopeMatching ctermfg=cyan ctermbg=black]] -- colors matching input
+-- cmd [[highlight TelescopePromptPrefix ctermfg=red ctermbg=black]]
 
 
 
 -- Trouble colors
-cmd [[highlight TroubleCount ctermfg=red ctermbg=black cterm=bold]] -- number of issues in file
+-- cmd [[highlight TroubleCount ctermfg=red ctermbg=black cterm=bold]] -- number of issues in file
 
 
 -- Dashboard colors
-cmd [[highlight DashboardHeader ctermfg=red ctermbg=black cterm=bold]] -- dashboard image
-cmd [[highlight DashboardCenter ctermfg=blue ctermbg=black]]           -- dashboard image
-cmd [[highlight DashboardCenterIcon ctermfg=green ctermbg=black]]      -- dashboard image
-cmd [[highlight DashboardShortcut ctermfg=red ctermbg=black]]          -- dashboard image
-cmd [[highlight DashboardFooter ctermfg=cyan ctermbg=black]]           -- dashboard image
+-- cmd [[highlight DashboardHeader ctermfg=red ctermbg=black cterm=bold]] -- dashboard image
+-- cmd [[highlight DashboardCenter ctermfg=blue ctermbg=black]]           -- dashboard image
+-- cmd [[highlight DashboardCenterIcon ctermfg=green ctermbg=black]]      -- dashboard image
+-- cmd [[highlight DashboardShortcut ctermfg=red ctermbg=black]]          -- dashboard image
+-- cmd [[highlight DashboardFooter ctermfg=cyan ctermbg=black]]           -- dashboard image
 
 
 -- BarBar tab line colors
 -- https://github.com/romgrk/barbar.nvim/blob/b3695e9825e33cd534d142383271557755370f3f/doc/barbar.txt#L79
-cmd [[highlight BufferTabpageFill ctermfg=black ctermbg=black]]       -- background of empty space
-cmd [[highlight BufferCurrent ctermfg=cyan ctermbg=black cterm=bold]] -- current buffer text color
-cmd [[highlight BufferCurrentSign ctermfg=green ctermbg=black]]       -- separator color of current buffer
-cmd [[highlight BufferInactive ctermfg=white ctermbg=black]]          -- inactive buffer text color
-cmd [[highlight BufferInactiveSign ctermfg=white ctermbg=black]]      -- separator color of inactive buffer
-cmd [[highlight BufferInactiveMod ctermfg=red ctermbg=black]]         -- color of inactive modified files
+-- cmd [[highlight BufferTabpageFill ctermfg=black ctermbg=black]]       -- background of empty space
+-- cmd [[highlight BufferCurrent ctermfg=cyan ctermbg=black cterm=bold]] -- current buffer text color
+-- cmd [[highlight BufferCurrentSign ctermfg=green ctermbg=black]]       -- separator color of current buffer
+-- cmd [[highlight BufferInactive ctermfg=white ctermbg=black]]          -- inactive buffer text color
+-- cmd [[highlight BufferInactiveSign ctermfg=white ctermbg=black]]      -- separator color of inactive buffer
+-- cmd [[highlight BufferInactiveMod ctermfg=red ctermbg=black]]         -- color of inactive modified files
 
 
 
 
 -- Hop highlight colors
 -- :h hop-highlights
-cmd [[highlight HopNextKey ctermfg=green ctermbg=black cterm=bold]]
-cmd [[highlight HopNextKey1 ctermfg=blue ctermbg=black cterm=bold]]
-cmd [[highlight HopNextKey2 ctermfg=yellow ctermbg=black cterm=bold]]
-cmd [[highlight HopUnmatched ctermfg=red ctermbg=black cterm=bold]]
-cmd [[highlight HopCursor ctermfg=cyan ctermbg=black cterm=bold]]
-cmd [[highlight HopPreview ctermfg=magenta ctermbg=black cterm=bold]]
+-- cmd [[highlight HopNextKey ctermfg=green ctermbg=black cterm=bold]]
+-- cmd [[highlight HopNextKey1 ctermfg=blue ctermbg=black cterm=bold]]
+-- cmd [[highlight HopNextKey2 ctermfg=yellow ctermbg=black cterm=bold]]
+-- cmd [[highlight HopUnmatched ctermfg=red ctermbg=black cterm=bold]]
+-- cmd [[highlight HopCursor ctermfg=cyan ctermbg=black cterm=bold]]
+-- cmd [[highlight HopPreview ctermfg=magenta ctermbg=black cterm=bold]]
 
 -- Symbols outline highlights
-cmd [[highlight FocusedSymbol ctermfg=magenta ctermbg=black cterm=bold]]
+-- cmd [[highlight FocusedSymbol ctermfg=magenta ctermbg=black cterm=bold]]
 
 
 -- nvim notify highlight groups
-cmd [[highlight NotifyERRORBorder ctermfg=red ctermbg=black]]
-cmd [[highlight NotifyERRORIcon ctermfg=red ctermbg=black]]
-cmd [[highlight NotifyERRORTitle ctermfg=red ctermbg=black]]
-
-cmd [[highlight NotifyINFOBorder ctermfg=blue ctermbg=black]]
-cmd [[highlight NotifyINFOIcon ctermfg=green ctermbg=black]]
-cmd [[highlight NotifyINFOTitle ctermfg=blue ctermbg=black]]
-
-cmd [[highlight NotifyWARNBorder ctermfg=yellow ctermbg=black]]
-cmd [[highlight NotifyWARNIcon ctermfg=red ctermbg=black]]
-cmd [[highlight NotifyWARNTitle ctermfg=yellow ctermbg=black]]
-
-cmd [[highlight NotifyDEBUGBorder ctermfg=magenta ctermbg=black]]
-cmd [[highlight NotifyDEBUGIcon ctermfg=green ctermbg=black]]
-cmd [[highlight NotifyDEBUGTitle ctermfg=magenta ctermbg=black]]
-
-cmd [[highlight NotifyTRACEBorder ctermfg=cyan ctermbg=black]]
-cmd [[highlight NotifyTRACEIcon ctermfg=magenta ctermbg=black]]
-cmd [[highlight NotifyTRACETitle ctermfg=cyan ctermbg=black]]
+-- cmd [[highlight NotifyERRORBorder ctermfg=red ctermbg=black]]
+-- cmd [[highlight NotifyERRORIcon ctermfg=red ctermbg=black]]
+-- cmd [[highlight NotifyERRORTitle ctermfg=red ctermbg=black]]
+--
+-- cmd [[highlight NotifyINFOBorder ctermfg=blue ctermbg=black]]
+-- cmd [[highlight NotifyINFOIcon ctermfg=green ctermbg=black]]
+-- cmd [[highlight NotifyINFOTitle ctermfg=blue ctermbg=black]]
+--
+-- cmd [[highlight NotifyWARNBorder ctermfg=yellow ctermbg=black]]
+-- cmd [[highlight NotifyWARNIcon ctermfg=red ctermbg=black]]
+-- cmd [[highlight NotifyWARNTitle ctermfg=yellow ctermbg=black]]
+--
+-- cmd [[highlight NotifyDEBUGBorder ctermfg=magenta ctermbg=black]]
+-- cmd [[highlight NotifyDEBUGIcon ctermfg=green ctermbg=black]]
+-- cmd [[highlight NotifyDEBUGTitle ctermfg=magenta ctermbg=black]]
+--
+-- cmd [[highlight NotifyTRACEBorder ctermfg=cyan ctermbg=black]]
+-- cmd [[highlight NotifyTRACEIcon ctermfg=magenta ctermbg=black]]
+-- cmd [[highlight NotifyTRACETitle ctermfg=cyan ctermbg=black]]
