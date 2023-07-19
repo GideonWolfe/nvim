@@ -12,6 +12,10 @@ local opts = {
 }
 
 local mappings = {
+    b = {
+        name = "buffer",
+        o = {function() telescope_extensions.file_browser.actions.open() end, "Open"}
+    },
     f = {
         -- Anything that involves locating and navigating to it
         name = "find",
@@ -51,7 +55,7 @@ local mappings = {
         a = { "<cmd>silent Git add %<cr>", "Git add current file" },
         b = { "<cmd>silent Git blame<cr>", "Git Blame" },
         c = { "<cmd>Git commit<cr>", "Git Commit" },
-        d = { "<cmd>Git diff<cr>", "Git Diff" },
+        d = { "<cmd>DiffviewOpen<cr>", "Git Diff" },
         g = { "<cmd>LazyGitCurrentFile<cr>", "Git GUI" },
         l = { "<cmd>Git log<cr>", "Git Log" },
         m = { "<cmd>Git merge<cr>", "Git Merge" },
