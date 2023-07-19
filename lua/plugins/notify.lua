@@ -13,7 +13,7 @@ require("notify").setup({
     level = 2,
     minimum_width = 50,
     render = "default",
-    stages = "static",
+    stages = "fade_in_slide_out",
     timeout = 5000,
     top_down = true
 

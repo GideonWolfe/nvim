@@ -59,6 +59,8 @@ require('telescope').load_extension('projects')
 require('telescope').load_extension('neoclip')
 -- Add the snippet extension
 require('telescope').load_extension('luasnip')
+-- Add the file browser extension
+require('telescope').load_extension('file_browser')
 
 -- local map = require('utils.map')
 -- local nnoremap = map.nnoremap
