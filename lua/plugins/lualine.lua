@@ -1,4 +1,4 @@
--- TODO some of these modes aren't recognized in lualine?
+-- TODO: some of these modes aren't recognized in lualine?
 local function fmtMode()
     local mode = vim.api.nvim_get_mode()["mode"]
     if mode == "n" then
@@ -72,7 +72,7 @@ local custom_theme = require('lualine.themes.auto')
 -- custom_theme.visual.c.fg = 'purple'
 
 
--- TODO seems to always consider window inactive??
+-- TODO: seems to always consider window inactive??
 -- custom_theme.inactive.a.bg = 'black'
 -- custom_theme.inactive.a.fg = 'grey'
 -- custom_theme.inactive.b.bg = 'black'
@@ -85,6 +85,7 @@ require('lualine').setup {
     options = {
         icons_enabled = true,
         --theme = custom_theme,
+        -- TODO: find separators that work better
         component_separators = { left = '', right = '' },
         -- component_separators = { left = '', right = ''},
         section_separators = { left = '', right = '' },
@@ -95,7 +96,7 @@ require('lualine').setup {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = true, -- TODO testing this
+        globalstatus = true, -- TODO: testing this
         refresh = {
             statusline = 1000,
             tabline = 1000,

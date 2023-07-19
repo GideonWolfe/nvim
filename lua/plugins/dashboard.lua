@@ -34,7 +34,7 @@ db.setup({
             '⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠿⠿⠛⠛⠻⠿⠿⠟⠃⠀⠀⠀⠀          ',
 
         },
-        -- TODO add custom function
+        -- TODO: add custom function
         footer =
             function()
                 return {

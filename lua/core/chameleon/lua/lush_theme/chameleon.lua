@@ -116,7 +116,7 @@ local theme = lush(function(injected_functions)
         CursorLineNr   { fg=green, gui='bold' }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         CursorLineFold { fg=blue, gui='bold'}, -- Like FoldColumn when 'cursorline' is set for the cursor line (color of + fold icon in column WHEN cursor is on fold line)
         CursorLineSign { bg=background}, -- Like SignColumn when 'cursorline' is set for the cursor line
-        -- TODO this is broken
+        -- TODO: this is broken
         -- MatchParen     { gui='reverse', bg=TermCursor.bg }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg        { fg=white, gui='bold' }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea        { }, -- Area for messages and cmdline
@@ -128,7 +128,7 @@ local theme = lush(function(injected_functions)
         FloatBorder    { fg=blue }, -- Border of floating windows.
         FloatTitle     { fg=green, gui='bold' }, -- Title of floating windows.
         NormalNC       { fg=Normal.fg}, -- normal text in non-current windows
-        Pmenu          { ctermfg=white, ctermbg=background }, -- Popup menu: Normal item.
+        Pmenu          { ctermfg=foreground, ctermbg=background }, -- Popup menu: Normal item.
         PmenuSel       { fg=green, ctermbg=background}, -- Popup menu: Selected item.
         PmenuKind      { fg = blue}, -- Popup menu: Normal item "kind"
         PmenuKindSel   { fg = cyan}, -- Popup menu: Selected item "kind"
@@ -335,7 +335,7 @@ local theme = lush(function(injected_functions)
         GitSignsDelete               {fg=red, bg=background }, -- Git sign for deleted code
 
         -- Diff View
-        -- TODO stil see cursorline
+        -- TODO: stil see cursorline
         -- https://github.com/neovim/neovim/issues/9800
         -- DiffviewCursorLine               {fg=background, bg=background }, -- Git sign for deleted code
         DiffviewDiffDeleteDim               {fg=hsl(DiffDelete.fg).darken(25), bg=background }, -- Git sign for deleted code
@@ -344,7 +344,7 @@ local theme = lush(function(injected_functions)
         IndentBlanklineContextStart               {guisp='None'}, -- Indent blankline line
 
         -- Devicons
-        -- TODO doesn't work
+        -- TODO: doesn't work
         DevIconDefault               {fg = foreground,},
 
         -- Mason (default colors are ugly)
@@ -358,11 +358,13 @@ local theme = lush(function(injected_functions)
         MasonHeader               {fg = background, bg=foreground, gui='bold'},
 
         -- Noice
+        -- https://github.com/folke/noice.nvim#-highlight-groups
         NoiceSplit               {fg=blue, bg=background}, -- Split used by Noice
         NoiceSplitBorder               {fg=blue, bg=background}, -- Split border used by Noice
         NoiceCursor               {gui='reverse'}, -- Cursor used by Noice
         -- cmdline options
-        NoiceCmdlinePopupTitle               {fg=cyan,}, -- Icon for cmd line input box
+        -- generic cmdline (applies to all modes)
+        NoiceCmdlinePopupTitle               {fg=cyan,}, -- Title for cmd line input box
         NoiceCmdlineIcon               {fg=green,}, -- Icon for cmd line input box
 
 
@@ -381,7 +383,7 @@ local theme = lush(function(injected_functions)
         TroubleCount               {fg=red, gui='bold'}, -- Count of errors in trouble
 
         -- Fidget
-        -- TODO the background color isn't working
+        -- TODO: the background color isn't working
         -- Maybe just let Noice handle LSP progress
         FidgetTitle               {Title}, -- Title of fidget messages
         FidgetTask               {fg=cyan, bg=background}, -- Body of fidget messages
@@ -433,7 +435,7 @@ local theme = lush(function(injected_functions)
         lualine_b_diagnostics_warn_normal               {fg=DiagnosticWarn.fg},
         lualine_b_diagnostics_warn_insert               {fg=DiagnosticWarn.fg},
         -- colors of diffs for different modes
-        -- TODO these don't seem to work in the line
+        -- TODO: these don't seem to work in the line
         lualine_b_diff_added_terminal               {fg=GitSignsAdd.fg},
         lualine_b_diff_added_inactive               {fg=GitSignsAdd.fg},
         lualine_b_diff_added_replace               {fg=GitSignsAdd.fg},
@@ -456,7 +458,7 @@ local theme = lush(function(injected_functions)
         lualine_b_diff_removed_normal               {fg=GitSignsDelete.fg},
         lualine_b_diff_removed_insert               {fg=GitSignsDelete.fg},
         -- Colors of devicons for different modes
-        -- TODO not sure if these work either
+        -- TODO: not sure if these work either
         lualine_x_filetype_DefaultDevIcon_terminal               {fg=white},
         lualine_x_filetype_DefaultDevIcon_inactive               {fg=white},
         lualine_x_filetype_DefaultDevIcon_replace               {fg=white},

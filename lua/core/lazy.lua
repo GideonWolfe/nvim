@@ -102,7 +102,6 @@ lazy.setup({
 		----------------
 
 		-- Completion engine
-		-- TODO setup keybinds
 		{
 			'hrsh7th/nvim-cmp',
 			config = function()
@@ -162,12 +161,6 @@ lazy.setup({
 		-------------
 
 		-- Auto commenting
-		-- {
-		--     "b3nj5m1n/kommentary",
-		--     config = function()
-		--         require("kommentary")
-		--     end,
-		-- },
 		{
 			"numToStr/Comment.nvim",
 			config = function()
@@ -239,7 +232,7 @@ lazy.setup({
 			end,
 		},
 
-        -- TODO
+        -- TODO:
         -- Code folding
         -- {
         --     "kevinhwang91/nvim-ufo".
@@ -290,7 +283,7 @@ lazy.setup({
 			end,
 		},
 
-		-- TODO this doesn't work....
+		-- TODO: this doesn't work....
 		-- Highlight jumpable locations within the line for horizontal movement
 		-- {
 		--     "jinh0/eyeliner.nvim",
@@ -434,7 +427,6 @@ lazy.setup({
 			end,
 		},
 
-		-- TODO re-enable after NOICE is configured
 		-- Pretty function signatures as you type
 		{
 			"ray-x/lsp_signature.nvim",
@@ -538,7 +530,7 @@ lazy.setup({
 		},
 
 	},
-    -- TODO this doesn't do anything but I think it's a floating win problem
+    -- TODO: this doesn't do anything but I think it's a floating win problem
     {
         ui = {
             border = "rounded"

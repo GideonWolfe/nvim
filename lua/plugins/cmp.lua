@@ -14,7 +14,7 @@ end
 -- Call LSPkind for symbols
 local lspkind = require('lspkind')
 
--- TODO is this necessary? What is this loading?
+-- TODO: is this necessary? What is this loading?
 require("luasnip/loaders/from_vscode").lazy_load()
 
 -- Helper function to assist completion
@@ -130,7 +130,7 @@ cmp.setup({
     })
   },
 
-    -- TODO
+    -- TODO:
     -- Formatting and icon customization
 	-- formatting = {
 	-- 	fields = { "kind", "abbr", "menu" },

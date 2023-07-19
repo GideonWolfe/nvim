@@ -2,7 +2,7 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 
 -- Diagnostics symbols for display in the sign column.
--- TODO Should be handled by colorscheme nowi
+-- TODO: Should be handled by colorscheme nowi
 -- vim.cmd('sign define DiagnosticSignError text=✖ texthl=DiagnosticError numhl=DiagnosticError')
 -- vim.cmd('sign define DiagnosticSignWarn text= texthl=DiagnosticsWarn numhl=DiagnosticWarn')
 -- vim.cmd('sign define DiagnosticSignInfo text= texthl=DiagnosticInfo numhl=DiagnosticInfo')
@@ -39,10 +39,10 @@ vim.diagnostic.config({
 local lspconfig = require('lspconfig')
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
--- TODO this isn't working at all, vim.lsp.buf.hover() still has no border
+-- TODO: this isn't working at all, vim.lsp.buf.hover() still has no border
 local lsp = vim.lsp
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
-  border = "double",
+  border = "rounded",
 })
 
 -- change border of :LspInfo

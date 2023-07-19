@@ -14,7 +14,7 @@ local opts = {
 local mappings = {
     b = {
         name = "buffer",
-        -- TODO this errors out for some reason, I created an issue
+        -- TODO: this errors out for some reason, I created an issue
         -- https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/225
         o = {function() require('telescope').extensions.file_browser.actions.open() end, "Open"}
     },
@@ -49,6 +49,7 @@ local mappings = {
     },
     c = {
         name = "code",
+        -- TODO: add binds for other comments (visual, block, etc)
         c = { function() comment.toggle.linewise.current() end, "Comment" },
         s = { function() telescope_extensions.luasnip.luasnip() end, "Snippets" },
         e = { "<cmd>TroubleToggle<cr>", "Errors" },
@@ -71,8 +72,9 @@ local mappings = {
         c = { "<cmd>HopChar1<cr>", "Hop Character" },
         l = { "<cmd>HopLine<cr>", "Hop Line" },
     },
-    -- TODO is there a prettier way to do this UI wise? Telescope maybe?
+    -- TODO: is there a prettier way to do this UI wise? Telescope maybe?
     -- https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim
+    -- https://github.com/nvim-telescope/telescope-ui-select.nvim
     l = {
         name = "lsp",
         ca = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "LSP Code Action" },

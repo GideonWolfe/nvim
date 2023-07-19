@@ -7,7 +7,7 @@ require("noice").setup({
         command_palette = true,       -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
         inc_rename = true,            -- enables an input dialog for inc-rename.nvim
-        -- TODO this doesn't do anything
+        -- TODO: this doesn't do anything
         lsp_doc_border = true,        -- add a border to hover docs and signature help
     },
     -- Each UI element gets its own config section. see plugin README for more
@@ -29,10 +29,10 @@ require("noice").setup({
             ["vim.lsp.util.stylize_markdown"] = true,
             -- ["cmp.entry.get_documentation"] = true,
         },
-        -- TODO this doesn't seem to work?
+        -- TODO: this doesn't seem to work?
         -- Hover text when lsp.buf.hover is called (leader lci)
         hover = {
-            -- TODO disabled until I figure out why hover keeps showing up
+            -- TODO: disabled until I figure out why hover keeps showing up
             enabled = false,
             silent = true,
             border = { style = "rounded" }
@@ -45,7 +45,7 @@ require("noice").setup({
         },
         -- Hover/signature help
         documentation = {
-            -- TODO disabled until I figure out why hover keeps showing up
+            -- TODO: disabled until I figure out why hover keeps showing up
             enabled = 'false',
             view = "hover",
             opts = {

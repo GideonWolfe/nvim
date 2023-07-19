@@ -5,7 +5,7 @@ require("mason").setup({
             package_pending = "➜",
             package_uninstalled = "✗"
         },
-        -- TODO this has no effect
+        -- TODO: this has no effect
         border = 'rounded'
     }
 })
