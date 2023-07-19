@@ -60,7 +60,7 @@ g.floating_window_border_dark = {
 }
 -- TODO make sure this doesn't cause issues
 opt.fillchars = {
-    fold = ' ',
+    fold = '─',
     diff = '╱',
     wbr = '─',
     msgsep = '─',

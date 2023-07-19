@@ -338,6 +338,7 @@ local theme = lush(function(injected_functions)
         -- TODO stil see cursorline
         -- https://github.com/neovim/neovim/issues/9800
         -- DiffviewCursorLine               {fg=background, bg=background }, -- Git sign for deleted code
+        DiffviewDiffDeleteDim               {fg=hsl(DiffDelete.fg).darken(25), bg=background }, -- Git sign for deleted code
 
         -- Indent Lines
         IndentBlanklineContextStart               {guisp='None'}, -- Indent blankline line
@@ -346,11 +347,24 @@ local theme = lush(function(injected_functions)
         -- TODO doesn't work
         DevIconDefault               {fg = foreground,},
 
+        -- Mason (default colors are ugly)
+        MasonHighlightBlockBold               {bg=green, fg=background, gui='bold'},
+        MasonHighlightBlockSecondary               {gui='reverse'},
+        MasonHighlightBlockBoldSecondary               {gui='bold,reverse'},
+        MasonHighlightSecondary               {fg = yellow},
+        MasonMuted               {fg = Comment.fg},
+        MasonMutedBlock               {bg = Comment.fg, fg = background},
+        MasonMutedBlockBold               {bg = Comment.fg, fg = background, gui='bold'},
+        MasonHeader               {fg = background, bg=foreground, gui='bold'},
 
         -- Noice
         NoiceSplit               {fg=blue, bg=background}, -- Split used by Noice
         NoiceSplitBorder               {fg=blue, bg=background}, -- Split border used by Noice
         NoiceCursor               {gui='reverse'}, -- Cursor used by Noice
+        -- cmdline options
+        NoiceCmdlinePopupTitle               {fg=cyan,}, -- Icon for cmd line input box
+        NoiceCmdlineIcon               {fg=green,}, -- Icon for cmd line input box
+
 
         -- Telescope
         TelescopeSelection               {fg=green, bg=background, gui='bold'}, -- Currently selected item in telescope
@@ -451,11 +465,13 @@ local theme = lush(function(injected_functions)
         lualine_x_filetype_DefaultDevIcon_insert               {fg=white},
 
 
-        -- Bufferline
+        -- Bufferline (lots more hl groups but they work fine unmodified. check telescope highlights)
         -- white x button but red for selscted tab
         BufferLineCloseButton               {fg=white},
         BufferLineCloseButtonSelected               {fg=red},
-        BufferLineTabSeparator               {fg=blue},
+
+
+
     }
 end)
 

@@ -14,7 +14,9 @@ local opts = {
 local mappings = {
     b = {
         name = "buffer",
-        o = {function() telescope_extensions.file_browser.actions.open() end, "Open"}
+        -- TODO this errors out for some reason, I created an issue
+        -- https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/225
+        o = {function() require('telescope').extensions.file_browser.actions.open() end, "Open"}
     },
     f = {
         -- Anything that involves locating and navigating to it
@@ -38,6 +40,7 @@ local mappings = {
             -- This keybind is <leader>fvh
             h = { function() telescope_builtins.help_tags() end, "Find Vim Help" },
             c = { function() telescope_builtins.commands() end, "Find Vim Commands" },
+            k = { function() telescope_builtins.keymaps() end, "Find Vim Keymaps" },
         },
         --vh = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Find Vim Help" },
         -- vc = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Find Vim Commands" },
