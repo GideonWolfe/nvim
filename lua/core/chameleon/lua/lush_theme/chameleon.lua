@@ -428,10 +428,17 @@ local theme = lush(function(injected_functions)
 
         -- Which key
         WhichKeySeparator              {fg=green, gui='bold'}, -- character between map and action/category
-        WhichKeySeperator              {fg=red, gui='bold'}, -- character between map and action/category
 
         -- LuaLine
-        -- colors of diagnostic warning for different modes
+        -- colors of the sections themselves for different modes
+        -- TODO: these are being overwritten somewhere
+        lualine_a_normal               {bg=green, fg=background},
+        lualine_a_insert               {bg=blue, fg=background},
+        lualine_a_visual               {bg=red, fg=background},
+        -- see, this should be bright ass red
+        lualine_a_command               {bg="red", fg=background},
+        -- colors of diagnostic warning for different modes 
+        -- (warn demos how you can change per mode but I use default for hint/error/info)
         lualine_b_diagnostics_warn_terminal               {fg=DiagnosticWarn.fg},
         lualine_b_diagnostics_warn_inactive               {fg=DiagnosticWarn.fg},
         lualine_b_diagnostics_warn_replace               {fg=DiagnosticWarn.fg},
@@ -439,8 +446,10 @@ local theme = lush(function(injected_functions)
         lualine_b_diagnostics_warn_visual               {fg=DiagnosticWarn.fg},
         lualine_b_diagnostics_warn_normal               {fg=DiagnosticWarn.fg},
         lualine_b_diagnostics_warn_insert               {fg=DiagnosticWarn.fg},
+        lualine_b_diagnostics_hint               {fg=DiagnosticHint.fg},
+        lualine_b_diagnostics_error               {fg=DiagnosticError.fg},
+        lualine_b_diagnostics_info               {fg=DiagnosticInfo.fg},
         -- colors of diffs for different modes
-        -- TODO: these don't seem to work in the line
         lualine_b_diff_added_terminal               {fg=GitSignsAdd.fg},
         lualine_b_diff_added_inactive               {fg=GitSignsAdd.fg},
         lualine_b_diff_added_replace               {fg=GitSignsAdd.fg},

@@ -1,13 +1,26 @@
 -- mapping names from LSP -> mason
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 
+local icons = require('core.icons')
+
 -- Diagnostics symbols for display in the sign column.
--- TODO: Should be handled by colorscheme nowi
+-- define them in a function/loop instead so we can use core icons
+-- the commented out section below doesn't support variables in text field
+local signs = {
+    Error = icons.diagnostics.Error,
+    Warning = icons.diagnostics.Warning,
+    Hint = icons.diagnostics.Hint,
+    Information = icons.diagnostics.Information
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 -- vim.cmd('sign define DiagnosticSignError text=✖ texthl=DiagnosticError numhl=DiagnosticError')
 -- vim.cmd('sign define DiagnosticSignWarn text= texthl=DiagnosticsWarn numhl=DiagnosticWarn')
 -- vim.cmd('sign define DiagnosticSignInfo text= texthl=DiagnosticInfo numhl=DiagnosticInfo')
 -- vim.cmd('sign define DiagnosticSignHint text= texthl=DiagnosticHint numhl=DiagnosticHint')
-
 
 -- Diagnostic configs
 vim.diagnostic.config({

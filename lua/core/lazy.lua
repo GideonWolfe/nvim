@@ -450,6 +450,7 @@ lazy.setup({
 		{
 			'nvim-lualine/lualine.nvim',
 			dependencies = 'kyazdani42/nvim-web-devicons',
+			after = 'chameleon',
 			config = function()
 				require("lualine").setup()
 			end,

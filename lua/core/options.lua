@@ -1,6 +1,31 @@
 local g = vim.g     -- Global variables
 local opt = vim.opt -- Set options (global/buffer/windows-scoped)
 
+-- function to set autogroups easily
+-- https://github.com/Th3Whit3Wolf/dots/blob/main/private_dot_config/private_nvim/private_lua/private_autocmd.lua
+local function augroups(definitions)
+	for group_name, definition in pairs(definitions) do
+		vim.api.nvim_command("augroup " .. group_name)
+		vim.api.nvim_command("autocmd!")
+		for _, def in ipairs(definition) do
+			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+			vim.api.nvim_command(command)
+		end
+		vim.api.nvim_command("augroup END")
+	end
+end
+
+-- Define our autocommands
+local autocmds = {
+	--- Current window has hybrid numbers
+	--- All other windows have absolute numbers
+	numberToggleConditional = {
+		{ "BufEnter,FocusGained,InsertLeave", "*", [[if &ft !~# 'dashboard' | set relativenumber | endif]] },
+		{ "BufLeave,FocusLost,InsertEnter", "*", [[if &ft !~# 'dashboard' | set norelativenumber | endif]] },
+	},
+}
+augroups(autocmds)
+
 
 -----------------------------------------------------------
 -- General
@@ -26,7 +51,7 @@ opt.list = false          -- Show line number
 opt.number = true         -- Show line number
 opt.numberwidth = 2       -- number column width
 opt.signcolumn = 'yes'    -- always show the sign column
-opt.relativenumber = true -- Show line number TODO: relative lines
+opt.relativenumber = true -- Show line number
 opt.showmatch = true      -- Highlight matching parenthesis
 opt.foldmethod = 'marker' -- Enable folding (default 'foldmarker')
 --opt.colorcolumn = '80'      -- Line lenght marker at 80 columns
@@ -34,7 +59,7 @@ opt.splitright = true     -- Vertical split to the right
 opt.splitbelow = true     -- Horizontal split to the bottom
 opt.linebreak = true      -- Wrap on word boundary
 opt.wrap = true           -- Wrap lines
-opt.termguicolors = true -- Enable 24-bit RGB colors TODO: this breaks colors
+opt.termguicolors = true -- Enable 24-bit RGB colors
 opt.laststatus = 3        -- Set global statusline
 opt.cmdheight = 2         -- more space in the neovim command line for displaying messages
 opt.autoread = true       -- Automatically reread the file if a change was detected outside of vim
