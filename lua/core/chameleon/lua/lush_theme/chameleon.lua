@@ -336,7 +336,7 @@ local theme = lush(function(injected_functions)
         GitSignsDelete               {fg=red, bg=background }, -- Git sign for deleted code
 
         -- Diff View
-        -- TODO: stil see cursorline
+        -- BUG: stil see cursorline
         -- https://github.com/neovim/neovim/issues/9800
         -- DiffviewCursorLine               {fg=background, bg=background }, -- Git sign for deleted code
         DiffviewDiffDeleteDim               {fg=hsl(DiffDelete.fg).darken(25), bg=background }, -- Git sign for deleted code
@@ -432,6 +432,7 @@ local theme = lush(function(injected_functions)
         -- LuaLine
         -- colors of the sections themselves for different modes
         -- TODO: these are being overwritten somewhere
+        -- BUG:
         lualine_a_normal               {bg=green, fg=background},
         lualine_a_insert               {bg=blue, fg=background},
         lualine_a_visual               {bg=red, fg=background},

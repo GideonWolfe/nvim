@@ -71,7 +71,7 @@ opt.cursorline = true     -- enable different color for line number (or whole li
 opt.pumheight = 10        -- height of pop up menu
 opt.showtabline = 1       -- always show tabs (2) (1 if only when 2 or more tabs)
 -- TODO: this setting is getting overwritten?
-opt.lazyredraw = false       -- TODO: disabled to quiet error from noice
+opt.lazyredraw = false       -- HACK: disabled to quiet error from noice
 -- style we can assign to windows
 g.floating_window_border_dark = {
     { "╭", "FloatBorderDark" },

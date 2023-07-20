@@ -38,56 +38,48 @@ local function diff_source()
 end
 
 -- Custom color options
-local custom_theme = require('lualine.themes.auto')
 
--- custom_theme.normal.a.bg = 'black'
--- custom_theme.normal.a.fg = 'blue'
--- custom_theme.normal.b.bg = 'black'
--- custom_theme.normal.b.fg = 'green'
--- custom_theme.normal.c.bg = 'black'
---
--- custom_theme.insert.a.bg = 'black'
--- custom_theme.insert.a.fg = 'green'
--- custom_theme.insert.b.bg = 'black'
--- custom_theme.insert.b.fg = 'yellow'
--- custom_theme.insert.c.bg = 'black'
--- custom_theme.insert.c.fg = 'green'
---
--- custom_theme.command.a.bg = 'black'
--- custom_theme.command.a.fg = 'cyan'
--- custom_theme.command.b.bg = 'black'
--- custom_theme.command.b.fg = 'purple'
--- custom_theme.command.c.bg = 'black'
--- custom_theme.command.c.fg = 'magenta'
---
--- custom_theme.replace.a.bg = 'black'
--- custom_theme.replace.a.fg = 'cyan'
--- custom_theme.replace.b.bg = 'black'
--- custom_theme.replace.b.fg = 'purple'
--- custom_theme.replace.c.bg = 'black'
--- custom_theme.replace.c.fg = 'magenta'
---
--- custom_theme.visual.a.bg = 'black'
--- custom_theme.visual.a.fg = 'green'
--- custom_theme.visual.b.bg = 'black'
--- custom_theme.visual.b.fg = 'yellow'
--- custom_theme.visual.c.bg = 'black'
--- custom_theme.visual.c.fg = 'purple'
-
-
--- TODO: seems to always consider window inactive??
--- custom_theme.inactive.a.bg = 'black'
--- custom_theme.inactive.a.fg = 'grey'
--- custom_theme.inactive.b.bg = 'black'
--- custom_theme.inactive.b.fg = 'grey'
--- custom_theme.inactive.c.bg = 'black'
--- custom_theme.inactive.c.fg = 'grey'
-
+-- TODO: This theme structure doesn't support HL groups
+-- Can I reference Lush theme colors?
+-- Why aren't all these colors available as highlight groups?
+-- local my_theme = {
+  -- normal = {
+    -- a = {bg = "DiagnosticError", fg = "magenta", gui = 'bold'},
+    -- b = {bg = "red", fg = "green"},
+    -- c = {bg = colors.darkgray, fg = colors.gray}
+  -- },
+  -- insert = {
+  --   a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
+  --   b = {bg = colors.lightgray, fg = colors.white},
+  --   c = {bg = colors.lightgray, fg = colors.white}
+  -- },
+  -- visual = {
+  --   a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
+  --   b = {bg = colors.lightgray, fg = colors.white},
+  --   c = {bg = colors.inactivegray, fg = colors.black}
+  -- },
+  -- replace = {
+  --   a = {bg = colors.red, fg = colors.black, gui = 'bold'},
+  --   b = {bg = colors.lightgray, fg = colors.white},
+  --   c = {bg = colors.black, fg = colors.white}
+  -- },
+  -- command = {
+  --   a = {bg = colors.green, fg = colors.black, gui = 'bold'},
+  --   b = {bg = colors.lightgray, fg = colors.white},
+  --   c = {bg = colors.inactivegray, fg = colors.black}
+  -- },
+  -- inactive = {
+  --   a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
+  --   b = {bg = colors.darkgray, fg = colors.gray},
+  --   c = {bg = colors.darkgray, fg = colors.gray}
+  -- }
+-- }
 
 require('lualine').setup {
     options = {
         icons_enabled = true,
         theme = "auto",
+        -- theme = my_theme,
         -- TODO: find separators that work better
         --component_separators = { left = '', right = '' },
         --section_separators = { left = '', right = '' },
@@ -110,9 +102,18 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_a = { fmtMode },
+         -- A section
+        lualine_a = {
+            fmtMode
+        },
+        -- B section
+        -- TODO: add solid color background so so its distinct from C section
         lualine_b = {
             'branch',
+        },
+        -- C section
+        lualine_c = {
+            -- Git Diffs
             {
                 'diff',
                 source = diff_source,
@@ -129,6 +130,7 @@ require('lualine').setup {
                     removed = icons.git.Remove,
                 }
             },
+            -- File diagnostics
             {
                 'diagnostics',
                 symbols = {
@@ -144,6 +146,7 @@ require('lualine').setup {
                     hint = "DiagnosticHint"
                 }
             },
+            -- File name
             {
                 -- TODO: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#changing-filename-color-based-on--modified-status
                 -- could be integrated https://github.com/nvim-lualine/lualine.nvim/issues/916
@@ -156,23 +159,20 @@ require('lualine').setup {
                 }
             }
         },
-        lualine_c = {
-            -- {
-            --     -- TODO: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#changing-filename-color-based-on--modified-status
-            --     -- could be integrated https://github.com/nvim-lualine/lualine.nvim/issues/916
-            --     'filename',
-            --     symbols = {
-            --         modified = icons.ui.Pencil,
-            --         readonly = icons.ui.Lock,
-            --         unnamed = icons.documents.File,
-            --         newfile = icons.ui.NewFile,
-            --     }
-            -- }
-        },
+        -- X section
         lualine_x = {
-            'encoding',
-            'fileformat',
-            'filetype',
+            -- File encoding
+            {
+                'encoding'
+            },
+            -- File Format
+            {
+                'fileformat'
+            },
+            -- File Type
+            {
+                'filetype'
+            },
             -- Custom section to show recording macro messages in status
             {
                 require("noice").api.status.mode.get,
@@ -180,8 +180,20 @@ require('lualine').setup {
                 color = { fg = "DiagnosticInfo" }
             }
         },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        -- Y section
+        lualine_y = {
+            -- Progress in file
+            {
+                'progress'
+            }
+        },
+        -- Z section
+        lualine_z = {
+            -- Location in file
+            {
+                'location'
+            }
+        }
     },
     inactive_sections = {
         lualine_a = {},
