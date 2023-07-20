@@ -92,7 +92,8 @@ require('lualine').setup {
         --component_separators = { left = '', right = '' },
         --section_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        component_separators = { left = '\\', right = '/' },
+        --component_separators = { left = '\\', right = '/' },
+        component_separators = { right = '╱', left = '╲' },
         -- component_separators = { left = '⦒', right = '⦑' },
         -- section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -142,9 +143,7 @@ require('lualine').setup {
                     info = "DiagnosticInfo",
                     hint = "DiagnosticHint"
                 }
-            }
-        },
-        lualine_c = {
+            },
             {
                 -- TODO: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#changing-filename-color-based-on--modified-status
                 -- could be integrated https://github.com/nvim-lualine/lualine.nvim/issues/916
@@ -156,6 +155,19 @@ require('lualine').setup {
                     newfile = icons.ui.NewFile,
                 }
             }
+        },
+        lualine_c = {
+            -- {
+            --     -- TODO: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#changing-filename-color-based-on--modified-status
+            --     -- could be integrated https://github.com/nvim-lualine/lualine.nvim/issues/916
+            --     'filename',
+            --     symbols = {
+            --         modified = icons.ui.Pencil,
+            --         readonly = icons.ui.Lock,
+            --         unnamed = icons.documents.File,
+            --         newfile = icons.ui.NewFile,
+            --     }
+            -- }
         },
         lualine_x = {
             'encoding',
