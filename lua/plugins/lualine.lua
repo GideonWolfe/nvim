@@ -38,55 +38,124 @@ local function diff_source()
 end
 
 -- Custom color options
+-- These HL groups are custom defined in the colorscheme file, they can be changed there.
+-- Colors for normal mode
+local LuaLineANormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineANormalReversed" })
+local LuaLineANormal = vim.api.nvim_get_hl(0, { name = "LuaLineANormal" })
+local LuaLineBNormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineBNormalReversed" })
+local LuaLineBNormal = vim.api.nvim_get_hl(0, { name = "LuaLineBNormal" })
+local LuaLineCNormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineCNormalReversed" })
+local LuaLineCNormal = vim.api.nvim_get_hl(0, { name = "LuaLineCNormal" })
+local LuaLineXNormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineXNormalReversed" })
+local LuaLineXNormal = vim.api.nvim_get_hl(0, { name = "LuaLineXNormal" })
+local LuaLineYNormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineYNormalReversed" })
+local LuaLineYNormal = vim.api.nvim_get_hl(0, { name = "LuaLineYNormal" })
+local LuaLineZNormalReversed = vim.api.nvim_get_hl(0, { name = "LuaLineZNormalReversed" })
+local LuaLineZNormal = vim.api.nvim_get_hl(0, { name = "LuaLineZNormal" })
+
+-- Colors for insert mode
+local LuaLineAInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineAInsertReversed" })
+local LuaLineAInsert = vim.api.nvim_get_hl(0, { name = "LuaLineAInsert" })
+local LuaLineBInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineBInsertReversed" })
+local LuaLineBInsert = vim.api.nvim_get_hl(0, { name = "LuaLineBInsert" })
+local LuaLineCInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineCInsertReversed" })
+local LuaLineCInsert = vim.api.nvim_get_hl(0, { name = "LuaLineCInsert" })
+local LuaLineXInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineXInsertReversed" })
+local LuaLineXInsert = vim.api.nvim_get_hl(0, { name = "LuaLineXInsert" })
+local LuaLineYInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineYInsertReversed" })
+local LuaLineYInsert = vim.api.nvim_get_hl(0, { name = "LuaLineYInsert" })
+local LuaLineZInsertReversed = vim.api.nvim_get_hl(0, { name = "LuaLineZInsertReversed" })
+local LuaLineZInsert = vim.api.nvim_get_hl(0, { name = "LuaLineZNormal" })
+
+-- Colors for visual mode
+local LuaLineAVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineAVisualReversed" })
+local LuaLineAVisual = vim.api.nvim_get_hl(0, { name = "LuaLineAVisual" })
+local LuaLineBVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineBVisualReversed" })
+local LuaLineBVisual = vim.api.nvim_get_hl(0, { name = "LuaLineBVisual" })
+local LuaLineCVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineCVisualReversed" })
+local LuaLineCVisual = vim.api.nvim_get_hl(0, { name = "LuaLineCVisual" })
+local LuaLineXVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineXVisualReversed" })
+local LuaLineXVisual = vim.api.nvim_get_hl(0, { name = "LuaLineXVisual" })
+local LuaLineYVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineYVisualReversed" })
+local LuaLineYVisual = vim.api.nvim_get_hl(0, { name = "LuaLineYVisual" })
+local LuaLineZVisualReversed = vim.api.nvim_get_hl(0, { name = "LuaLineZVisualReversed" })
+local LuaLineZVisual = vim.api.nvim_get_hl(0, { name = "LuaLineZNormal" })
+
+-- Colors for command mode
+local LuaLineACommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineACommandReversed" })
+local LuaLineACommand = vim.api.nvim_get_hl(0, { name = "LuaLineANormal" })
+local LuaLineBCommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineBCommandReversed" })
+local LuaLineBCommand = vim.api.nvim_get_hl(0, { name = "LuaLineBNormal" })
+local LuaLineCCommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineCCommandReversed" })
+local LuaLineCCommand = vim.api.nvim_get_hl(0, { name = "LuaLineCNormal" })
+local LuaLineXCommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineXCommandReversed" })
+local LuaLineXCommand = vim.api.nvim_get_hl(0, { name = "LuaLineXNormal" })
+local LuaLineYCommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineYCommandReversed" })
+local LuaLineYCommand = vim.api.nvim_get_hl(0, { name = "LuaLineYNormal" })
+local LuaLineZCommandReversed = vim.api.nvim_get_hl(0, { name = "LuaLineZCommandReversed" })
+local LuaLineZCommand = vim.api.nvim_get_hl(0, { name = "LuaLineZNormal" })
+
 
 -- TODO: This theme structure doesn't support HL groups
 -- Can I reference Lush theme colors?
 -- Why aren't all these colors available as highlight groups?
--- local my_theme = {
-  -- normal = {
-    -- a = {bg = "DiagnosticError", fg = "magenta", gui = 'bold'},
-    -- b = {bg = "red", fg = "green"},
-    -- c = {bg = colors.darkgray, fg = colors.gray}
-  -- },
-  -- insert = {
-  --   a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
-  --   b = {bg = colors.lightgray, fg = colors.white},
-  --   c = {bg = colors.lightgray, fg = colors.white}
-  -- },
-  -- visual = {
-  --   a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-  --   b = {bg = colors.lightgray, fg = colors.white},
-  --   c = {bg = colors.inactivegray, fg = colors.black}
-  -- },
+local my_theme = {
+  normal = {
+    a = 'LuaLineANormalReversed',
+    b = 'LuaLineBNormalReversed',
+    c = 'LuaLineCNormal',
+    x = 'LuaLineXNormal',
+    y = 'LuaLineYNormalReversed',
+    z = 'LuaLineZNormalReversed',
+  },
+  insert = {
+    a = 'LuaLineAInsertReversed',
+    b = 'LuaLineBInsertReversed',
+    c = 'LuaLineCInsert',
+    x = 'LuaLineXInsert',
+    y = 'LuaLineYInsertReversed',
+    z = 'LuaLineZInsertReversed',
+  },
+  visual = {
+    a = 'LuaLineAVisualReversed',
+    b = 'LuaLineBVisualReversed',
+    c = 'LuaLineCVisual',
+    x = 'LuaLineXVisual',
+    y = 'LuaLineYVisualReversed',
+    z = 'LuaLineZVisualReversed',
+  },
   -- replace = {
   --   a = {bg = colors.red, fg = colors.black, gui = 'bold'},
   --   b = {bg = colors.lightgray, fg = colors.white},
   --   c = {bg = colors.black, fg = colors.white}
   -- },
-  -- command = {
-  --   a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-  --   b = {bg = colors.lightgray, fg = colors.white},
-  --   c = {bg = colors.inactivegray, fg = colors.black}
-  -- },
+  command = {
+    a = 'LuaLineACommandReversed',
+    b = 'LuaLineBCommandReversed',
+    c = 'LuaLineCCommand',
+    x = 'LuaLineXCommand',
+    y = 'LuaLineYCommandReversed',
+    z = 'LuaLineZCommandReversed',
+  },
   -- inactive = {
   --   a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
   --   b = {bg = colors.darkgray, fg = colors.gray},
   --   c = {bg = colors.darkgray, fg = colors.gray}
   -- }
--- }
+}
 
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = "auto",
-        -- theme = my_theme,
+        -- theme = "auto",
+        theme = my_theme,
         -- TODO: find separators that work better
+        -- Arrow look
         --component_separators = { left = '', right = '' },
         --section_separators = { left = '', right = '' },
+        -- Hard slant look
         section_separators = { left = '', right = '' },
-        --component_separators = { left = '\\', right = '/' },
-        component_separators = { right = '╱', left = '╲' },
-        -- component_separators = { left = '⦒', right = '⦑' },
+        component_separators = { left = '╲', right = '╱' },
         -- section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},

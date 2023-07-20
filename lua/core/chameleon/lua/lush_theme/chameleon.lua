@@ -227,7 +227,7 @@ local theme = lush(function(injected_functions)
 
         -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
         --
-        DiagnosticError { fg = red },                                                             -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+        DiagnosticError { fg = red, bg = background },                                                             -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
         DiagnosticWarn { fg = yellow },                                                           -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
         DiagnosticInfo { fg = brightblue },                                                       -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
         DiagnosticHint { fg = white },                                                            -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
@@ -430,14 +430,82 @@ local theme = lush(function(injected_functions)
         WhichKeySeparator              {fg=green, gui='bold'}, -- character between map and action/category
 
         -- LuaLine
-        -- colors of the sections themselves for different modes
-        -- TODO: these are being overwritten somewhere
-        -- BUG:
-        lualine_a_normal               {bg=green, fg=background},
-        lualine_a_insert               {bg=blue, fg=background},
-        lualine_a_visual               {bg=red, fg=background},
-        -- see, this should be bright ass red
-        lualine_a_command               {bg="red", fg=background},
+        -- Lualine theming sucks. I have to define custom highlights here
+        -- because the provided ones get constantly overridden.
+        -- Then I can import these HL groups to use as variables within the quirky LuaLine theme table
+        -- which is located in the LuaLine config file
+        -- I have to include reverse colors because there's no support for dereferencing .fg or .bg elements.
+        -- It takes the whole HL group as a variable and just assumes fg=fg and bg=bg
+
+        -- Basic Colors
+        -- The "Reverse" versions are basically to provide an easy way from within Lualine config
+        -- to flip the highlighting for any specific section
+        LuaLineA              {fg=green, bg=background}, -- General color for A section coloring
+        LuaLineB              {fg=blue, bg=background}, -- General color for B section coloring
+        LuaLineC              {fg=cyan, bg=background}, -- General color for C section coloring
+        LuaLineAReversed              {fg=background, bg=green}, -- General color for A section coloring but reversed
+        LuaLineBReversed              {fg=background, bg=blue}, -- General color for B section coloring but reversed
+        LuaLineCReversed              {fg=background, bg=cyan}, -- General color for C section mode coloring but reversed
+        -- Mode specific colors
+        -- Generally normal mode gives a unique look to each section but special modes will be a solid color to easily see what you're doing
+        -- TODO: add darkened versions of these colors for inactive mode
+        -- Section A
+        LuaLineANormal              {fg=green, bg=background},
+        LuaLineANormalReversed      {fg=LuaLineANormal.bg, bg=LuaLineANormal.fg},
+        LuaLineAInsert              {fg=magenta, bg=background},
+        LuaLineAInsertReversed      {fg=LuaLineAInsert.bg, bg=LuaLineAInsert.fg},
+        LuaLineAVisual              {fg=blue, bg=background},
+        LuaLineAVisualReversed      {fg=LuaLineAVisual.bg, bg=LuaLineAVisual.fg},
+        LuaLineACommand             {fg=green, bg=background},
+        LuaLineACommandReversed     {fg=LuaLineACommand.bg, bg=LuaLineACommand.fg},
+        -- Section B
+        LuaLineBNormal              {fg=blue, bg=background},
+        LuaLineBNormalReversed      {fg=LuaLineBNormal.bg, bg=LuaLineBNormal.fg},
+        LuaLineBInsert              {fg=LuaLineBNormal.fg, bg=LuaLineBNormal.bg},
+        LuaLineBInsertReversed      {fg=LuaLineBInsert.bg, bg=LuaLineBInsert.fg},
+        LuaLineBVisual              {fg=blue, bg=background},
+        LuaLineBVisualReversed      {fg=LuaLineBVisual.bg, bg=LuaLineBVisual.fg},
+        LuaLineBCommand             {fg=green, bg=background},
+        LuaLineBCommandReversed     {fg=LuaLineBCommand.bg, bg=LuaLineBCommand.fg},
+        -- Section C
+        LuaLineCNormal              {fg=cyan, bg=background},
+        LuaLineCNormalReversed      {fg=LuaLineCNormal.bg, bg=LuaLineCNormal.fg},
+        LuaLineCInsert              {fg=cyan, bg=background},
+        LuaLineCInsertReversed      {fg=LuaLineCInsert.bg, bg=LuaLineCInsert.fg},
+        LuaLineCVisual              {fg=blue, bg=background},
+        LuaLineCVisualReversed      {fg=LuaLineCVisual.bg, bg=LuaLineCVisual.fg},
+        LuaLineCCommand             {fg=green, bg=background},
+        LuaLineCCommandReversed     {fg=LuaLineCCommand.bg, bg=LuaLineCCommand.fg},
+        -- Section X
+        LuaLineXNormal              {fg=yellow, bg=background},
+        LuaLineXNormalReversed      {fg=LuaLineXNormal.bg, bg=LuaLineXNormal.fg},
+        LuaLineXInsert              {fg=yellow, bg=background},
+        LuaLineXInsertReversed      {fg=LuaLineXInsert.bg, bg=LuaLineXInsert.fg},
+        LuaLineXVisual              {fg=blue, bg=background},
+        LuaLineXVisualReversed      {fg=LuaLineXVisual.bg, bg=LuaLineXVisual.fg},
+        LuaLineXCommand             {fg=green, bg=background},
+        LuaLineXCommandReversed     {fg=LuaLineXCommand.bg, bg=LuaLineXCommand.fg},
+        -- Section Y
+        LuaLineYNormal              {fg=blue, bg=background},
+        LuaLineYNormalReversed      {fg=LuaLineYNormal.bg, bg=LuaLineYNormal.fg},
+        LuaLineYInsert              {fg=blue, bg=background},
+        LuaLineYInsertReversed      {fg=LuaLineYInsert.bg, bg=LuaLineYInsert.fg},
+        LuaLineYVisual              {fg=blue, bg=background},
+        LuaLineYVisualReversed      {fg=LuaLineYVisual.bg, bg=LuaLineYVisual.fg},
+        LuaLineYCommand             {fg=green, bg=background},
+        LuaLineYCommandReversed     {fg=LuaLineYCommand.bg, bg=LuaLineYCommand.fg},
+        -- Section Z
+        LuaLineZNormal              {fg=green, bg=background},
+        LuaLineZNormalReversed      {fg=LuaLineZNormal.bg, bg=LuaLineZNormal.fg},
+        LuaLineZInsert              {fg=green, bg=background},
+        LuaLineZInsertReversed      {fg=LuaLineZInsert.bg, bg=LuaLineZInsert.fg},
+        LuaLineZVisual              {fg=blue, bg=background},
+        LuaLineZVisualReversed      {fg=LuaLineZVisual.bg, bg=LuaLineZVisual.fg},
+        LuaLineZCommand             {fg=green, bg=background},
+        LuaLineZCommandReversed     {fg=LuaLineZCommand.bg, bg=LuaLineZCommand.fg},
+
+
+
         -- colors of diagnostic warning for different modes 
         -- (warn demos how you can change per mode but I use default for hint/error/info)
         lualine_b_diagnostics_warn_terminal               {fg=DiagnosticWarn.fg},
