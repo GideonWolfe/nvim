@@ -1,3 +1,6 @@
+-- HACK: this option has to be enabled before the plugins are loaded
+-- But i cant load options before plugins, as i set the colorscheme (which is a plugin)
+vim.opt.termguicolors = true
 -- Plugin list
 require('core/lazy')
 

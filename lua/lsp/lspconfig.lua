@@ -17,10 +17,6 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
--- vim.cmd('sign define DiagnosticSignError text=✖ texthl=DiagnosticError numhl=DiagnosticError')
--- vim.cmd('sign define DiagnosticSignWarn text= texthl=DiagnosticsWarn numhl=DiagnosticWarn')
--- vim.cmd('sign define DiagnosticSignInfo text= texthl=DiagnosticInfo numhl=DiagnosticInfo')
--- vim.cmd('sign define DiagnosticSignHint text= texthl=DiagnosticHint numhl=DiagnosticHint')
 
 -- Diagnostic configs
 vim.diagnostic.config({
