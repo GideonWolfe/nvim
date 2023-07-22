@@ -24,4 +24,3 @@ require('lsp/lspconfig')
 
 -- individual plugin configs
 vim.cmd('runtime! lua/plugins/*.lua')
-

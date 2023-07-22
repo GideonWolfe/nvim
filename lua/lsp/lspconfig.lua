@@ -8,7 +8,7 @@ local icons = require('core.icons')
 -- the commented out section below doesn't support variables in text field
 local signs = {
     Error = icons.diagnostics.Error,
-    Warning = icons.diagnostics.Warning,
+    Warn = icons.diagnostics.Warning,
     Hint = icons.diagnostics.Hint,
     Information = icons.diagnostics.Information
 }
