@@ -70,8 +70,8 @@ opt.conceallevel = 0      -- don't automatically collapse markdown and latex
 opt.cursorline = true     -- enable different color for line number (or whole line) of current line
 opt.pumheight = 10        -- height of pop up menu
 opt.showtabline = 1       -- always show tabs (2) (1 if only when 2 or more tabs)
--- TODO: this setting is getting overwritten?
 opt.lazyredraw = false       -- HACK: disabled to quiet error from noice
+
 -- style we can assign to windows
 g.floating_window_border_dark = {
     { "╭", "FloatBorderDark" },
@@ -117,7 +117,7 @@ opt.autoindent = true  -- match previous line indent when doinng O or o
 -----------------------------------------------------------
 opt.hidden = true     -- Enable background buffers
 opt.history = 100     -- Remember N lines in history
-opt.lazyredraw = true -- Faster scrolling
+--opt.lazyredraw = true -- Faster scrolling (disabled for noice.nvim)
 opt.synmaxcol = 240   -- Max column for syntax highlight
 opt.updatetime = 250  -- ms to wait for trigger an event
 
