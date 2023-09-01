@@ -17,7 +17,7 @@ require("which-key").setup({
     },
     icons = {
         breadcrumb = icons.ui.ChevronRight,
-        group = icons.misc.Tag,
+        group = icons.documents.Folder.." ", -- HACK adding space here
         -- separator = "$"
     }
 })
