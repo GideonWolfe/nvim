@@ -283,17 +283,16 @@ lazy.setup({
 			end,
 		},
 
-		-- TODO: this doesn't work....
 		-- Highlight jumpable locations within the line for horizontal movement
-		-- {
-		--     "jinh0/eyeliner.nvim",
-		--     config = function()
-		--         require 'eyeliner'.setup {
-		--             highlight_on_key = true,
-		--             dim = true
-		--         }
-		--     end
-		-- },
+		{
+		    "jinh0/eyeliner.nvim",
+		    config = function()
+		        require 'eyeliner'.setup {
+		            highlight_on_key = true,
+		            dim = true
+		        }
+		    end
+		},
 
 
 		-- navigate via symbols/functions
