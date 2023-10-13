@@ -342,7 +342,7 @@ local theme = lush(function(injected_functions)
         DiffviewDiffDeleteDim               {fg=hsl(DiffDelete.fg).darken(25), bg=background }, -- Git sign for deleted code
 
         -- Indent Lines
-        IndentBlanklineContextStart               {guisp='None'}, -- Indent blankline line
+        IblScope               {guisp='None', fg=yellow}, -- Indent blankline line
 
         -- Devicons
         -- TODO: doesn't work
