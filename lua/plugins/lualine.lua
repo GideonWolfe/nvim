@@ -187,12 +187,7 @@ require('lualine').setup {
                 'diff',
                 source = diff_source,
                 colored = true,
-                -- Disabled because hl groups handle it with more granularity
-                -- diff_color = {
-                --     added = 'green',
-                --     modified = 'yellow',
-                --     removed = 'red',
-                -- },
+                -- TODO: these stopped showing
                 symbols = {
                     added = icons.git.Add,
                     modified = icons.git.Mod,
