@@ -25,34 +25,7 @@ vim.diagnostic.config({
     }
 })
 
--- Border for floating windows provided by LSP
--- local border = {
---     { "🭽", "FloatBorder" },
---     { "▔",  "FloatBorder" },
---     { "🭾", "FloatBorder" },
---     { "▕",  "FloatBorder" },
---     { "🭿", "FloatBorder" },
---     { "▁",  "FloatBorder" },
---     { "🭼", "FloatBorder" },
---     { "▏",  "FloatBorder" },
--- }
-
--- Override open floating window functions to include borders
--- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
--- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
---     opts = opts or {}
---     opts.border = opts.border or border
---     return orig_util_open_floating_preview(contents, syntax, opts, ...)
--- end
-
 local lspconfig = require('lspconfig')
-
--- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
--- TODO: this isn't working at all, vim.lsp.buf.hover() still has no border
---local lsp = vim.lsp
--- lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
---   border = "rounded",
--- })
 
 -- change border of :LspInfo
 require('lspconfig.ui.windows').default_options = {

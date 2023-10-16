@@ -1,6 +1,8 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
 	main = "ibl",
+    dependencies = {"chameleon"},
+    priority = 0,
 	config = function()
 		local highlight = {
 		    "RainbowDelimiterRed",
@@ -13,32 +15,32 @@ return {
 		}
 		require("ibl").setup{
 		    indent = {
-			char = "▏",
-			highlight = highlight
+                char = "▏",
+                highlight = highlight
 		    },
 		    exclude = {
-			buftypes = {
-			    "terminal",
-			    "nofile",
-			},
-			filetypes = {
-			    "help",
-			    "defx",
-			    "vimwiki",
-			    "man",
-			    "gitmessengerpopup",
-			    "gitcommit",
-			    "diagnosticpopup",
-			    "lspinfo",
-			    "packer",
-			    "text",
-			    "markdown",
-			    "yaml",
-			    "dashboard",
-			    "TelescopePrompt",
-			    "NvimTree",
-			    "" -- all buffers without a filetype
-			}
+                buftypes = {
+                    "terminal",
+                    "nofile",
+                },
+                filetypes = {
+                    "help",
+                    "defx",
+                    "vimwiki",
+                    "man",
+                    "gitmessengerpopup",
+                    "gitcommit",
+                    "diagnosticpopup",
+                    "lspinfo",
+                    "packer",
+                    "text",
+                    "markdown",
+                    "yaml",
+                    "dashboard",
+                    "TelescopePrompt",
+                    "NvimTree",
+                    "" -- all buffers without a filetype
+                }
 		    },
 		    scope = {
                 highlight = "IblScope"

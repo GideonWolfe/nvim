@@ -5,19 +5,19 @@ return {
 		require("mason-lspconfig").setup {
 		    -- automatic_installation = true,
 		    ensure_installed = {
+			"angularls",
 			"rust_analyzer",
 			"pyright",
 			"cmake",
-			--TODO broken
-			--"awk_ls",
+			"clangd",
+			"awk_ls",
 			"bashls",
 			"ansiblels",
 			"arduino_language_server",
 			"azure_pipelines_ls",
 			"clojure_lsp",
 			"codeqlls",
-			--TODO broken
-			--"csharp_ls",
+			"csharp_ls",
 			"cssls",
 			"cssmodules_ls",
 			"docker_compose_language_service",

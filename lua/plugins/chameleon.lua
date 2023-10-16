@@ -1,5 +1,5 @@
 return {
     dir = '~/.config/nvim/lua/core/chameleon',
     name = "chameleon",
-    priority = 1000
+    priority = 1000,
 }
