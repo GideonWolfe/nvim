@@ -49,10 +49,10 @@ local lspconfig = require('lspconfig')
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 -- TODO: this isn't working at all, vim.lsp.buf.hover() still has no border
-local lsp = vim.lsp
-lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
-})
+--local lsp = vim.lsp
+-- lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
+--   border = "rounded",
+-- })
 
 -- change border of :LspInfo
 require('lspconfig.ui.windows').default_options = {

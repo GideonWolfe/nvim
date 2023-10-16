@@ -321,14 +321,15 @@ local theme = lush(function(injected_functions)
         -- PLUGIN SPECIFIC HIGHLIGHT GROUPS --
         --------------------------------------
 
-        -- TSRainbow
-        TSRainbowRed               {fg=red,},
-        TSRainbowYellow               {fg=yellow,},
-        TSRainbowBlue               {fg=blue,},
-        TSRainbowOrange               {fg=yellow,},
-        TSRainbowGreen               {fg=green,},
-        TSRainbowViolet               {fg=magenta,},
-        TSRainbowCyan               {fg=cyan,},
+        --RainbowDelimiters
+        RainbowDelimiterRed               {fg=red,},
+        RainbowDelimiterYellow               {fg=yellow,},
+        RainbowDelimiterBlue               {fg=blue,},
+        RainbowDelimiterOrange               {fg=yellow,},
+        RainbowDelimiterGreen               {fg=green,},
+        RainbowDelimiterViolet               {fg=magenta,},
+        RainbowDelimiterCyan               {fg=cyan,},
+
 
         -- Git Signs
         GitSignsAdd               {fg=green, bg=background }, -- Git sign for added code
@@ -367,6 +368,7 @@ local theme = lush(function(injected_functions)
         -- generic cmdline (applies to all modes)
         NoiceCmdlinePopupTitle               {fg=cyan,}, -- Title for cmd line input box
         NoiceCmdlineIcon               {fg=green,}, -- Icon for cmd line input box
+        --NoiceLspFormatProgressSpinner               {fg=green, bg=blue}, -- Icon for cmd line input box
 
 
         -- Telescope

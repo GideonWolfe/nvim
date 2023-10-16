@@ -23,4 +23,4 @@ require('utils/map')
 require('lsp/lspconfig')
 
 -- individual plugin configs
-vim.cmd('runtime! lua/plugins/*.lua')
+--vim.cmd('runtime! lua/plugins/*.lua')

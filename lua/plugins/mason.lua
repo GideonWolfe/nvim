@@ -1,11 +1,17 @@
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        },
-        -- TODO: this has no effect
-        border = 'rounded'
-    }
-})
+-- LSP package manager
+return {
+	'williamboman/mason.nvim',
+	build = ":MasonUpdate",
+	config = function()
+		require("mason").setup({
+		    ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                },
+                border = 'rounded'
+		    }
+		})
+	end
+}

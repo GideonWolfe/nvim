@@ -141,11 +141,6 @@ cmd [[au VimEnter * highlight Todo ctermbg=black ctermfg=yellow cterm=bold]]
 
 
 --colorscheme
---TODO: hides cursor on whitespace?
--- cmd [[colorscheme wal]]
---TODO: these highlight all punctuation with treesitter?
--- cmd [[colorscheme wpgtk]]
--- cmd [[colorscheme wpgtkAlt]]
 cmd [[colorscheme chameleon]]
 --
 -- -- Set number gutter to transparent
