@@ -10,14 +10,16 @@ return {
 			"pyright",
 			"cmake",
 			"clangd",
-			"awk_ls",
+            -- TODO: errors on laptop?
+			--"awk_ls",
 			"bashls",
 			"ansiblels",
 			"arduino_language_server",
 			"azure_pipelines_ls",
 			"clojure_lsp",
 			"codeqlls",
-			"csharp_ls",
+            -- TODO: errors on laptop?
+			--"csharp_ls",
 			"cssls",
 			"cssmodules_ls",
 			"docker_compose_language_service",
