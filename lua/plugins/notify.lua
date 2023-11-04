@@ -7,11 +7,11 @@ return {
 		    -- background_colour = "NotifyBackground",
 		    -- fps = 30,
 		    icons = {
-			DEBUG = "",
-			ERROR = icons.diagnostics.Error,
-			INFO = icons.diagnostics.Information,
-			TRACE = "✎",
-			WARN = icons.diagnostics.Warning
+                DEBUG = icons.ui.Bug,
+                ERROR = icons.diagnostics.Error,
+                INFO = icons.diagnostics.Information,
+                TRACE = "✎",
+                WARN = icons.diagnostics.Warning
 		    },
 		    level = 2,
 		    minimum_width = 50,

@@ -252,6 +252,7 @@ local theme = lush(function(injected_functions)
         DiagnosticSignInfo         { fg = DiagnosticInfo.fg } , -- Used for "Info" signs in sign column.
         DiagnosticSignHint         { fg = DiagnosticHint.fg } , -- Used for "Hint" signs in sign column.
         DiagnosticSignOk           { fg = DiagnosticOk.fg } , -- Used for "Ok" signs in sign column.
+        healthSuccess           { fg = DiagnosticOk.fg } , -- Used for "Ok" signs in checkhealth output.
 
         -- Tree-Sitter syntax groups.
         --
