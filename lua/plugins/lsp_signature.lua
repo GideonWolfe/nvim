@@ -7,7 +7,7 @@ return {
 		require('lsp_signature').setup({
 		    bind = true,
 		    handler_opts = {
-			border = "rounded"
+                border = "rounded"
 		    },
 		    -- Virtual text kinda cluttered
 		    hint_enable = true,

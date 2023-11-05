@@ -27,10 +27,10 @@ return {
 		    layout_config = {
 		      prompt_position = "bottom",
 		      horizontal = {
-			mirror = false,
+                mirror = false,
 		      },
 		      vertical = {
-			mirror = false,
+                mirror = false,
 		      },
 		    },
 		    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
