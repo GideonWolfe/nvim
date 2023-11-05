@@ -8,6 +8,14 @@ return{
 			dependencies = 'hrsh7th/nvim-cmp'
 		},
 		{
+			'hrsh7th/cmp-calc',
+			dependencies = 'hrsh7th/nvim-cmp'
+		},
+		{
+			'uga-rosa/cmp-dictionary',
+			dependencies = 'hrsh7th/nvim-cmp'
+		},
+		{
 			'hrsh7th/cmp-cmdline',
 			dependencies = 'hrsh7th/nvim-cmp'
 		},

@@ -17,6 +17,7 @@ return {
 			block = 'gbc',
 		    },
 		    ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+            -- Changed these to not interfere with <leader>g git commands
 		    opleader = {
                 ---Line-comment keymap
                 line = 'cc',

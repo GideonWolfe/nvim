@@ -177,15 +177,15 @@ return {
 
 		    -- Sources for completion to pull from
 			sources = {
-				{ name = "crates" },
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
-				{ name = "copilot" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
-				{ name = "cmp_tabnine" },
 				{ name = "path" },
 				{ name = "emoji" },
+				{ name = "crates" },
+				{ name = "dictionary" },
+				{ name = "calc" },
 			},
 
 		    -- Confirmation behavior
