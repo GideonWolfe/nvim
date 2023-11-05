@@ -69,7 +69,7 @@ opt.sidescrolloff = 5     -- scroll offset keep context around cursor
 opt.conceallevel = 0      -- don't automatically collapse markdown and latex
 opt.cursorline = true     -- enable different color for line number (or whole line) of current line
 opt.pumheight = 10        -- height of pop up menu
-opt.showtabline = 1       -- always show tabs (2) (1 if only when 2 or more tabs)
+opt.showtabline = 2       -- always show tabs (2) (1 if only when 2 or more tabs)
 opt.lazyredraw = false
 
 -- style we can assign to windows
