@@ -558,6 +558,26 @@ local theme = lush(function(injected_functions)
         BufferLineCloseButton               {fg=white},
         BufferLineCloseButtonSelected               {fg=red},
 
+        -- NeoTest colors
+        NeotestAdapterName               {fg=yellow},
+        --NeotestBorder               {fg=white},
+        --NeotestDir               {fg=white},
+        --NeotestExpandMarker               {fg=white},
+        NeotestFailed               {fg=DiagnosticError.fg, bg=DiagnosticError.bg},
+        NeotestFile               {fg=white},
+        --NeotestFocused               {fg=white},
+        --NeotestIndent               {fg=white},
+        --NeotestMarked               {fg=white},
+        NeotestNamespace               {fg=blue},
+        NeotestPassed               {fg=DiagnosticOk.fg, bg=DiagnosticOk.bg},
+        NeotestRunning               {fg=blue},
+        --NeotestWinSelect               {fg=white},
+        --NeotestSkipped               {fg=white},
+        --NeotestTarget               {fg=white},
+        NeotestTest               {fg=white},
+        --NeotestUnknown               {fg=white},
+        NeotestWatching               {fg=yellow},
+
 
 
     }

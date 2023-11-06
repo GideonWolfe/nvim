@@ -30,6 +30,8 @@ return {
 
 
 		-- Main setup function for cmp
+        --HACK: 
+        --@diagnostic disable-next-line missing-fields
 		cmp.setup({
 		    -- Declare Luasnip as snippet engine
 			snippet = {

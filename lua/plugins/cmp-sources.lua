@@ -12,7 +12,7 @@ return{
 			dependencies = 'hrsh7th/nvim-cmp'
 		},
 		{
-			'uga-rosa/cmp-dictionary',
+			'hrsh7th/cmp-calc',
 			dependencies = 'hrsh7th/nvim-cmp'
 		},
 		{

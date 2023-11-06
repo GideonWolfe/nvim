@@ -29,7 +29,7 @@ return {
 			-- TODO: lsp diagnostics don't show up in tabs
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = diag_indicators,
-			style_preset = bufferline.style_preset.minimal,
+			style_preset = bufferline.style_preset.default,
 			buffer_close_icon = icons.ui.Close,
 			modified_icon = icons.git.Mod,
 			left_trunc_marker = '',

@@ -117,6 +117,14 @@ return {
                 o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
                 t = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols Telescope" },
 		    },
+		    t = {
+                name = "test",
+                g = { "<cmd>Neotest summary<cr>", "Toggle sidebar window" },
+                f = { function() require("neotest").run.run(vim.fn.expand("%")) end, "Run current file" },
+                n = { function() require("neotest").run.run() end, "Run nearest test" },
+                s = { function() require("neotest").run.stop() end, "Stop nearest test" },
+                a = { function() require("neotest").run.attach() end, "Attach to nearest test" },
+		    },
 		}
 
 		wk.register(mappings, opts)
