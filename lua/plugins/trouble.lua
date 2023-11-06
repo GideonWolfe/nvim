@@ -3,6 +3,7 @@ return {
 	"folke/trouble.nvim",
 	dependencies = "kyazdani42/nvim-web-devicons",
 	config = function()
+        local icons = require("core.icons")
 		require("trouble").setup {
 		position = "bottom", -- position of the list can be: bottom, top, left, right
 		  height = 10, -- height of the trouble list when position is top or bottom
@@ -37,12 +38,13 @@ return {
 		  auto_close = false, -- automatically close the list when you have no diagnostics
 		  auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
 		  auto_fold = false, -- automatically fold a file trouble list at creation
+          -- This is ignored due to below use_diagnostic_signs
 		  signs = {
 		      -- icons / text used for a diagnostic
-		      error = "",
-		      warning = "",
-		      hint = "",
-		      information = "",
+		      error = icons.lsp.Error,
+		      warning = icons.lsp.Warning,
+		      hint = icons.lsp.Hint,
+		      information = icons.lsp.Info,
 		      other = "﫠"
 		  },
 		  use_diagnostic_signs = true -- enabling this will use the signs defined in your lsp client

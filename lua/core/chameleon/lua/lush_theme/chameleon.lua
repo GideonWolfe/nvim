@@ -578,6 +578,38 @@ local theme = lush(function(injected_functions)
         --NeotestUnknown               {fg=white},
         NeotestWatching               {fg=yellow},
 
+        -- Cmp colors generic
+        CmpItemAbbr               {fg=blue,}, -- general unmatched default text
+        CmpItemAbbrMatch               {fg=white,}, -- text that matches
+        CmpItemAbbrMatchFuzzy               {fg=cyan,}, -- text that matches indirectly via fuzzy finding
+        CmpItemKind               {fg=magenta,}, -- color of icon
+        -- Cmp colors kind specific
+        CmpItemKindText               {fg=white,},
+        CmpItemKindMethod               {fg=cyan,},
+        CmpItemKindFunction               {fg=cyan,},
+        CmpItemKindConstructor               {fg=cyan,},
+        CmpItemKindField               {fg=green,},
+        CmpItemKindVariable               {fg=green,},
+        CmpItemKindClass               {fg=blue,},
+        CmpItemKindInterface               {fg=blue,},
+        CmpItemKindModule               {fg=blue,},
+        CmpItemKindProperty               {fg=green,},
+        CmpItemKindUnit               {fg=yellow,},
+        CmpItemKindValue               {fg=yellow,},
+        CmpItemKindEnum               {fg=yellow,},
+        CmpItemKindKeyword               {fg=magenta,},
+        CmpItemKindSnippet               {fg=magenta,},
+        CmpItemKindColor               {fg=green,},
+        CmpItemKindFile               {fg=red,},
+        CmpItemKindReference               {fg=red,},
+        CmpItemKindFolder               {fg=red,},
+        CmpItemKindEnumMember               {fg=red,},
+        CmpItemKindConstant               {fg=yellow,},
+        CmpItemKindStruct               {fg=yellow,},
+        CmpItemKindEvent               {fg=yellow,},
+        CmpItemKindOperator               {fg=green,},
+        CmpItemKindTypeParameter               {fg=green,},
+
 
 
     }

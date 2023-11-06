@@ -30,9 +30,9 @@ return {
 
 
 		-- Main setup function for cmp
-        --HACK: 
-        --@diagnostic disable-next-line
+        ---@diagnostic disable-next-line: redundant-parameter
 		cmp.setup({
+
 		    -- Declare Luasnip as snippet engine
 			snippet = {
 				expand = function(args)
@@ -90,105 +90,32 @@ return {
 			}),
 
 
-		  formatting = {
-		    -- LSPkind formatting
-		    format = lspkind.cmp_format({
-		      mode = 'symbol', -- show only symbol annotations
-		      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-		      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            -- LSPkind formatting
+		    formatting = {
+                -- Basic config
+                format = lspkind.cmp_format({
+                    mode = 'symbol', -- show only symbol annotations
+                    maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                    ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+                    before = function (entry, vim_item)
+                        return vim_item
+                    end
+                })
+            },
 
-		      -- The function below will be called before any actual modifications from lspkind
-		      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-		      --before = function (entry, vim_item)
-		      --  ...
-		      --  return vim_item
-		      --end
 
-		    -- LSPkind symbols
-		    symbol_map = {
-		      Text = "󰉿",
-		      LuaSnip = "✂️",
-		      Method = "󰆧",
-		      Function = "󰊕",
-		      Constructor = "",
-		      Field = "",
-		      Variable = "󰀫",
-		      Class = "󰠲",
-		      Interface = "󱦜",
-		      Module = "",
-		      Property = "",
-		      Unit = "",
-		      Value = "󰎠",
-		      Enum = "",
-		      Keyword = "",
-		      Snippet = "",
-		      Color = "󰏘",
-		      File = "",
-		      Reference = "󰈇",
-		      Folder = "",
-		      EnumMember = "",
-		      Constant = "󰏿",
-		      Struct = "󱏒",
-		      Event = "",
-		      Operator = "",
-		      TypeParameter = ""
-		    },
-
-		    })
-		  },
-
-		    -- TODO:
-		    -- Formatting and icon customization
-			-- formatting = {
-			-- 	fields = { "kind", "abbr", "menu" },
-			-- 	format = function(entry, vim_item)
-			-- 		-- Kind icons
-			-- 		vim_item.kind = kind_icons[vim_item.kind]
-
-			-- 		if entry.source.name == "cmp_tabnine" then
-			-- 			vim_item.kind = icons.misc.Robot
-			-- 			vim_item.kind_hl_group = "CmpItemKindTabnine"
-			-- 		end
-			-- 		if entry.source.name == "copilot" then
-			-- 			vim_item.kind = icons.git.Octoface
-			-- 			vim_item.kind_hl_group = "CmpItemKindCopilot"
-			-- 		end
-		-- 
-		-- 			if entry.source.name == "emoji" then
-		-- 				vim_item.kind = icons.misc.Smiley
-		-- 				vim_item.kind_hl_group = "CmpItemKindEmoji"
-		-- 			end
-		-- 
-		-- 			if entry.source.name == "crates" then
-		-- 				vim_item.kind = icons.misc.Package
-		-- 				vim_item.kind_hl_group = "CmpItemKindCrate"
-		-- 			end
-		-- 
-		-- 			-- NOTE: order matters
-		-- 			vim_item.menu = ({
-		-- 				nvim_lsp = "",
-		-- 				nvim_lua = "",
-		-- 				luasnip = "",
-		-- 				buffer = "",
-		-- 				path = "",
-		-- 				emoji = "",
-		-- 			})[entry.source.name]
-		-- 			return vim_item
-		-- 		end,
-		-- 	},
-
-		    -- Sources for completion to pull from
-			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "nvim_lua" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-				{ name = "emoji" },
-				{ name = "crates" },
-				{ name = "dictionary" },
-				{ name = "calc" },
-			},
+            -- Sources for completion to pull from
+            sources = {
+                { name = "nvim_lsp" },
+                { name = "nvim_lua" },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" },
+                { name = "emoji" },
+                { name = "crates" },
+                { name = "dictionary" },
+                { name = "calc" },
+            },
 
 		    -- Confirmation behavior
 			confirm_opts = {
@@ -198,11 +125,11 @@ return {
 		    -- Completion window settings
 			window = {
 				documentation = {
-					border = "rounded",
+					border = "single",
 					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 				},
 				completion = {
-					border = "rounded",
+					border = "single",
 					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 				},
 			},
