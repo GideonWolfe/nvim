@@ -31,7 +31,7 @@ return {
 
 		-- Main setup function for cmp
         --HACK: 
-        --@diagnostic disable-next-line missing-fields
+        --@diagnostic disable-next-line
 		cmp.setup({
 		    -- Declare Luasnip as snippet engine
 			snippet = {
@@ -106,31 +106,31 @@ return {
 
 		    -- LSPkind symbols
 		    symbol_map = {
-		      Text = "",
+		      Text = "󰉿",
 		      LuaSnip = "✂️",
-		      Method = "",
-		      Function = "",
+		      Method = "󰆧",
+		      Function = "󰊕",
 		      Constructor = "",
-		      Field = "ﰠ",
-		      Variable = "",
-		      Class = "ﴯ",
-		      Interface = "",
+		      Field = "",
+		      Variable = "󰀫",
+		      Class = "󰠲",
+		      Interface = "󱦜",
 		      Module = "",
-		      Property = "ﰠ",
-		      Unit = "塞",
-		      Value = "",
+		      Property = "",
+		      Unit = "",
+		      Value = "󰎠",
 		      Enum = "",
-		      Keyword = "",
+		      Keyword = "",
 		      Snippet = "",
-		      Color = "",
-		      File = "",
-		      Reference = "",
-		      Folder = "",
+		      Color = "󰏘",
+		      File = "",
+		      Reference = "󰈇",
+		      Folder = "",
 		      EnumMember = "",
-		      Constant = "",
-		      Struct = "פּ",
+		      Constant = "󰏿",
+		      Struct = "󱏒",
 		      Event = "",
-		      Operator = "",
+		      Operator = "",
 		      TypeParameter = ""
 		    },
 

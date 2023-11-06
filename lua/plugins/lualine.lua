@@ -195,7 +195,6 @@ return {
 				--source = diff_source,
 				source = nil,
 				colored = true,
-				-- TODO: these stopped showing
 				symbols = {
 				    --added = icons.git.Add,
 				    added = icons.git.Add.." ",
@@ -207,10 +206,10 @@ return {
 			    {
 				'diagnostics',
 				symbols = {
-				    error = icons.diagnostics.Error,
-				    warn = icons.diagnostics.Warning,
-				    info = icons.diagnostics.Information,
-				    hint = icons.diagnostics.Hint
+				    error = icons.diagnostics.Error.." ",
+				    warn = icons.diagnostics.Warning.." ",
+				    info = icons.diagnostics.Information.." ",
+				    hint = icons.diagnostics.Hint.." "
 				},
 				diagnostics_color = {
 				    error = "DiagnosticError",

@@ -30,6 +30,9 @@ return {
 
     {
         "nvim-neotest/neotest-python",
-    }
+    },
 
+    {
+        "Issafalcon/neotest-dotnet",
+    },
 }
