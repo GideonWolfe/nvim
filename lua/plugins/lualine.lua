@@ -208,7 +208,7 @@ return {
 				symbols = {
 				    error = icons.diagnostics.Error.." ",
 				    warn = icons.diagnostics.Warning.." ",
-				    info = icons.diagnostics.Information.." ",
+				    info = icons.diagnostics.Information,
 				    hint = icons.diagnostics.Hint.." "
 				},
 				diagnostics_color = {
